@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="生成AI入門研修のイメージ">
+  <defs>
+    <radialGradient id="spot" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#2a447f"/><stop offset="52%" stop-color="#16234c"/><stop offset="100%" stop-color="#091029"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset="1" stop-color="#bb8a30"/></linearGradient>
+    <linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ceee6"/><stop offset="1" stop-color="#4aa6d8"/></linearGradient>
+    <radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#eccd7c" stop-opacity=".5"/><stop offset="100%" stop-color="#eccd7c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="ac" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#56c7d6" stop-opacity=".5"/><stop offset="100%" stop-color="#56c7d6" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#7e93c8" stroke-opacity=".09"/></pattern>
+    <style>@keyframes p{0%,100%{opacity:.45}50%{opacity:1}}@keyframes f{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}.pulse{animation:p 3.2s ease-in-out infinite}.float{animation:f 6s ease-in-out infinite}@media(prefers-reduced-motion:reduce){.pulse,.float{animation:none}}</style>
+  </defs>
+  <rect width="480" height="360" fill="url(#spot)"/>
+  <circle cx="400" cy="60" r="150" fill="url(#ag)"/><circle cx="70" cy="330" r="150" fill="url(#ac)"/>
+  <rect width="480" height="360" fill="url(#grid)"/>
+  <!-- open book (glass) -->
+  <path d="M240 244 C 200 218 160 218 130 226 V128 C 160 120 200 120 240 148 Z" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".18"/>
+  <path d="M240 244 C 280 218 320 218 350 226 V128 C 320 120 280 120 240 148 Z" fill="#ffffff" fill-opacity=".04" stroke="#ffffff" stroke-opacity=".18"/>
+  <g stroke="url(#cy)" stroke-width="2.5" opacity=".7"><path d="M154 154 222 168M154 176 222 190M258 168 326 154M258 190 326 176"/></g>
+  <line x1="240" y1="148" x2="240" y2="244" stroke="url(#gold)" stroke-width="2.5" opacity=".8"/>
+  <!-- spark of learning -->
+  <g class="float"><path class="pulse" d="M300 92 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8 z" fill="url(#gold)" filter="url(#glow)"/></g>
+</svg>

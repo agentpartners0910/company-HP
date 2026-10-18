@@ -1,0 +1,23 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="エージェントパートナーズ シンボル">
+  <defs>
+    <linearGradient id="navyS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3168"/>
+      <stop offset="100%" stop-color="#0F1A3C"/>
+    </linearGradient>
+    <linearGradient id="goldS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C547"/>
+      <stop offset="100%" stop-color="#9E7B17"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(200, 200)">
+    <circle cx="-50" cy="0" r="68" fill="none" stroke="url(#navyS)" stroke-width="10"/>
+    <circle cx="50" cy="0" r="68" fill="none" stroke="url(#navyS)" stroke-width="10"/>
+    <g fill="url(#goldS)">
+      <circle cx="-118" cy="0" r="7"/>
+      <circle cx="118" cy="0" r="7"/>
+      <circle cx="0" cy="-68" r="7"/>
+      <circle cx="0" cy="68" r="7"/>
+    </g>
+    <circle cx="0" cy="0" r="9" fill="url(#goldS)"/>
+  </g>
+</svg>

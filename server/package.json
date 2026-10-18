@@ -1,0 +1,13 @@
+{
+  "name": "agent-partners-log-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AGENT PARTNERS 静的サイト配信 + チャット入力ログの簡易ファイルDB(NDJSON)サーバー（依存ライブラリなし）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

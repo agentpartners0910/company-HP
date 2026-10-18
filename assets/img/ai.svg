@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="AI・生成AI活用支援のイメージ">
+  <defs>
+    <radialGradient id="spot" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#2a447f"/><stop offset="52%" stop-color="#16234c"/><stop offset="100%" stop-color="#091029"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset="1" stop-color="#bb8a30"/></linearGradient>
+    <linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ceee6"/><stop offset="1" stop-color="#4aa6d8"/></linearGradient>
+    <radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#eccd7c" stop-opacity=".55"/><stop offset="100%" stop-color="#eccd7c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="ac" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#56c7d6" stop-opacity=".5"/><stop offset="100%" stop-color="#56c7d6" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#7e93c8" stroke-opacity=".09"/></pattern>
+    <style>@keyframes p{0%,100%{opacity:.5}50%{opacity:1}}@keyframes f{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}.pulse{animation:p 3.6s ease-in-out infinite}.float{animation:f 6s ease-in-out infinite}@media(prefers-reduced-motion:reduce){.pulse,.float{animation:none}}</style>
+  </defs>
+  <rect width="480" height="360" fill="url(#spot)"/>
+  <circle cx="396" cy="60" r="150" fill="url(#ag)"/><circle cx="64" cy="330" r="150" fill="url(#ac)"/>
+  <rect width="480" height="360" fill="url(#grid)"/>
+  <circle cx="240" cy="180" r="98" fill="#ffffff" fill-opacity=".04" stroke="#ffffff" stroke-opacity=".12"/>
+  <!-- links -->
+  <g stroke="url(#cy)" stroke-width="1.6" fill="none" stroke-opacity=".55">
+    <path d="M240 180 310 180M240 180 275 119M240 180 205 119M240 180 170 180M240 180 205 241M240 180 275 241"/>
+    <path d="M310 180 275 119M275 119 205 119M205 119 170 180M170 180 205 241M205 241 275 241M275 241 310 180"/>
+  </g>
+  <!-- nodes -->
+  <g class="float">
+    <g fill="url(#cy)" filter="url(#glow)"><circle cx="310" cy="180" r="6"/><circle cx="205" cy="119" r="6"/><circle cx="205" cy="241" r="6"/></g>
+    <g fill="#dbe6ff"><circle cx="275" cy="119" r="5.5"/><circle cx="170" cy="180" r="5.5"/><circle cx="275" cy="241" r="5.5"/></g>
+  </g>
+  <circle class="pulse" cx="240" cy="180" r="13" fill="url(#gold)" filter="url(#glow)"/>
+  <!-- generative sparks -->
+  <g fill="url(#gold)" filter="url(#glow)" class="pulse">
+    <path d="M330 96 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8 z"/>
+  </g>
+  <path d="M366 150 l4.5 12 12 4.5 -12 4.5 -4.5 12 -4.5 -12 -12 -4.5 12 -4.5 z" fill="url(#gold)" opacity=".85"/>
+</svg>

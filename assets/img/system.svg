@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="業務システム開発のイメージ">
+  <defs>
+    <radialGradient id="spot" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#2a447f"/><stop offset="52%" stop-color="#16234c"/><stop offset="100%" stop-color="#091029"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset="1" stop-color="#bb8a30"/></linearGradient>
+    <linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ceee6"/><stop offset="1" stop-color="#4aa6d8"/></linearGradient>
+    <radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#eccd7c" stop-opacity=".5"/><stop offset="100%" stop-color="#eccd7c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="ac" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#56c7d6" stop-opacity=".5"/><stop offset="100%" stop-color="#56c7d6" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#7e93c8" stroke-opacity=".09"/></pattern>
+    <style>@keyframes p{0%,100%{opacity:.55}50%{opacity:1}}@keyframes f{0%,100%{transform:rotate(0)}100%{transform:rotate(360deg)}}.pulse{animation:p 3.4s ease-in-out infinite}.spin{transform-origin:322px 214px;animation:f 16s linear infinite}@media(prefers-reduced-motion:reduce){.pulse,.spin{animation:none}}</style>
+  </defs>
+  <rect width="480" height="360" fill="url(#spot)"/>
+  <circle cx="400" cy="60" r="150" fill="url(#ag)"/><circle cx="70" cy="330" r="150" fill="url(#ac)"/>
+  <rect width="480" height="360" fill="url(#grid)"/>
+  <!-- glass window -->
+  <rect x="116" y="86" width="248" height="188" rx="18" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".18"/>
+  <rect x="116" y="86" width="248" height="36" rx="18" fill="#ffffff" fill-opacity=".05"/>
+  <circle cx="138" cy="104" r="4.5" fill="url(#gold)"/><circle cx="155" cy="104" r="4.5" fill="#7d93c4"/><circle cx="172" cy="104" r="4.5" fill="#7d93c4"/>
+  <!-- side list -->
+  <g fill="#aebfe6" opacity=".7"><rect x="150" y="144" width="118" height="7" rx="3.5"/><rect x="150" y="159" width="84" height="7" rx="3.5"/></g>
+  <!-- bars -->
+  <g fill="url(#cy)" opacity=".92"><rect x="150" y="208" width="22" height="40" rx="4"/><rect x="184" y="184" width="22" height="64" rx="4"/><rect x="218" y="218" width="22" height="30" rx="4"/></g>
+  <rect class="pulse" x="252" y="172" width="22" height="76" rx="4" fill="url(#gold)" filter="url(#glow)"/>
+  <!-- gear -->
+  <g class="spin" filter="url(#glow)">
+    <g transform="translate(322,214)">
+      <circle r="24" fill="#13204a" stroke="url(#gold)" stroke-width="2.5"/>
+      <circle r="8" fill="url(#gold)"/>
+      <g fill="url(#gold)"><rect x="-3" y="-32" width="6" height="11" rx="2"/><rect x="-3" y="21" width="6" height="11" rx="2"/><rect x="-32" y="-3" width="11" height="6" rx="2"/><rect x="21" y="-3" width="11" height="6" rx="2"/><rect x="-25" y="-25" width="6" height="11" rx="2" transform="rotate(45)"/><rect x="14" y="14" width="6" height="11" rx="2" transform="rotate(45)"/></g>
+    </g>
+  </g>
+</svg>

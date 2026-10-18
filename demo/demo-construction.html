@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>建設業向け 案件・工程管理システム｜提案デモ｜株式会社エージェントパートナーズ</title>
+  <meta name="description" content="建設業向けの案件・工程管理システムの提案デモ画面（サンプル）。現場ごとの工程進捗・原価・職人配置を一元管理し、AIが遅延リスクを早期に検知します。" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="../assets/favicon_32.png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/demo.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-top">
+      <div class="app-top__left">
+        <span class="app-logo">AGENT<b>PARTNERS</b></span>
+        <span class="demo-badge">DEMO</span>
+        <span class="app-sys">建設業向け｜案件・工程管理システム</span>
+      </div>
+      <div class="app-top__right">
+        <span class="app-user">サンプル建設 / 工務部</span>
+        <a href="../cases.html" class="app-back">← 開発事例へ戻る</a>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <aside class="app-side">
+        <p class="side-cap">MENU</p>
+        <nav class="side-nav">
+          <button type="button" class="side-link is-active" data-screen="screen-dashboard" aria-current="page"><span class="ico"></span>案件ダッシュボード</button>
+          <button type="button" class="side-link" data-screen="screen-schedule"><span class="ico"></span>工程管理</button>
+          <button type="button" class="side-link" data-screen="screen-cost"><span class="ico"></span>原価・見積</button>
+          <button type="button" class="side-link" data-screen="screen-worker"><span class="ico"></span>職人・配置</button>
+          <button type="button" class="side-link" data-screen="screen-report"><span class="ico"></span>写真・報告</button>
+          <button type="button" class="side-link" data-screen="screen-partner"><span class="ico"></span>協力会社</button>
+          <button type="button" class="side-link" data-screen="screen-billing"><span class="ico"></span>請求・入金</button>
+        </nav>
+        <div class="side-foot">これは提案用のデモ画面です。メニューを押すと画面が切り替わります。</div>
+      </aside>
+
+      <main class="app-main">
+        <div class="demo-note">本画面は提案用のデモです。表示している数値・データはすべてサンプルです。</div>
+
+        <!-- Dashboard -->
+        <section class="screen" id="screen-dashboard">
+          <div class="app-headline"><h1>案件ダッシュボード</h1><p>2026/06/27 時点</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">進行中の案件</p><p class="kpi__val">14<small>件</small></p><span class="kpi__trend trend-flat">うち今月着工 3件</span></div>
+            <div class="kpi"><p class="kpi__label">今月の完工予定</p><p class="kpi__val">5<small>件</small></p><span class="kpi__trend trend-up">▲ 予定どおり 4件</span></div>
+            <div class="kpi kpi--alert"><p class="kpi__label">遅延リスク</p><p class="kpi__val">2<small>件</small></p><span class="kpi__trend trend-flat">AI検知 / 要対応</span></div>
+            <div class="kpi"><p class="kpi__label">平均粗利率</p><p class="kpi__val">21.6<small>%</small></p><span class="kpi__trend trend-up">▲ 前期比 +1.8pt</span></div>
+          </section>
+          <div class="grid2">
+            <section class="panel">
+              <div class="panel__head"><h2 class="panel__title">現場別 工程進捗</h2><span class="panel__sub">全体に対する進捗率</span></div>
+              <div class="plist">
+                <div class="prow"><span class="prow__name">A邸 新築工事</span><div class="prow__track"><div class="prow__fill" style="width:78%"></div></div><span class="prow__pct">78%</span></div>
+                <div class="prow"><span class="prow__name">B商店 改装</span><div class="prow__track"><div class="prow__fill" style="width:45%"></div></div><span class="prow__pct">45%</span></div>
+                <div class="prow"><span class="prow__name">C工場 増築</span><div class="prow__track"><div class="prow__fill" style="width:30%"></div></div><span class="prow__pct">30%</span></div>
+                <div class="prow"><span class="prow__name">D邸 外構</span><div class="prow__track"><div class="prow__fill" style="width:92%"></div></div><span class="prow__pct">92%</span></div>
+                <div class="prow"><span class="prow__name">E団地 改修</span><div class="prow__track"><div class="prow__fill" style="width:14%"></div></div><span class="prow__pct">14%</span></div>
+              </div>
+            </section>
+            <section class="panel ai-panel">
+              <div class="panel__head"><h2 class="panel__title">AIアシスタント</h2></div>
+              <div class="ai-item"><p class="ai-item__tag">遅延リスク検知</p><p class="ai-item__body"><b>「C工場 増築」</b>は、進捗ペースと天候予報から<b>工期を3日超過する恐れ</b>。基礎工程の人員追加を検討してください。</p><div class="ai-actions"><button class="ai-btn ai-btn--gold">配置を調整</button><button class="ai-btn ai-btn--ghost">詳細</button></div></div>
+              <div class="ai-item"><p class="ai-item__tag">原価アラート</p><p class="ai-item__body"><b>「B商店 改装」</b>の資材費が見積比 <b>+7%</b>。今のうちに是正すれば粗利を確保できます。</p></div>
+            </section>
+          </div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">案件一覧</h2><span class="chip">進行中 14件</span></div>
+            <table class="dtable">
+              <thead><tr><th>案件名</th><th>工期</th><th class="num">進捗</th><th>担当</th><th class="num">粗利率</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">A邸 新築工事</td><td>〜07/15</td><td class="num">78%</td><td>田中</td><td class="num">23%</td><td><span class="pill pill--run">順調</span></td></tr>
+                <tr><td class="strong">B商店 改装</td><td>〜07/05</td><td class="num">45%</td><td>佐藤</td><td class="num">17%</td><td><span class="pill pill--warn">原価注意</span></td></tr>
+                <tr><td class="strong">C工場 増築</td><td>〜07/20</td><td class="num">30%</td><td>鈴木</td><td class="num">20%</td><td><span class="pill pill--bad">遅延リスク</span></td></tr>
+                <tr><td class="strong">D邸 外構</td><td>〜06/29</td><td class="num">92%</td><td>田中</td><td class="num">26%</td><td><span class="pill pill--ok">完工間近</span></td></tr>
+                <tr><td class="strong">E団地 改修</td><td>〜08/10</td><td class="num">14%</td><td>高橋</td><td class="num">22%</td><td><span class="pill pill--run">着工</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 工程管理 -->
+        <section class="screen" id="screen-schedule" hidden>
+          <div class="app-headline"><h1>工程管理</h1><p>「A邸 新築工事」の工程</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">工程別 進捗</h2><span class="chip">全6工程</span></div>
+            <div class="plist">
+              <div class="prow"><span class="prow__name">仮設・基礎</span><div class="prow__track"><div class="prow__fill" style="width:100%"></div></div><span class="prow__pct">100%</span></div>
+              <div class="prow"><span class="prow__name">躯体工事</span><div class="prow__track"><div class="prow__fill" style="width:100%"></div></div><span class="prow__pct">100%</span></div>
+              <div class="prow"><span class="prow__name">屋根・外装</span><div class="prow__track"><div class="prow__fill" style="width:85%"></div></div><span class="prow__pct">85%</span></div>
+              <div class="prow"><span class="prow__name">内装工事</span><div class="prow__track"><div class="prow__fill" style="width:55%"></div></div><span class="prow__pct">55%</span></div>
+              <div class="prow"><span class="prow__name">設備工事</span><div class="prow__track"><div class="prow__fill" style="width:40%"></div></div><span class="prow__pct">40%</span></div>
+              <div class="prow"><span class="prow__name">検査・引渡</span><div class="prow__track"><div class="prow__fill" style="width:0%"></div></div><span class="prow__pct">0%</span></div>
+            </div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">直近の予定</h2></div>
+            <table class="dtable">
+              <thead><tr><th>工程</th><th>予定</th><th>協力会社</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">内装（クロス）</td><td>06/28〜07/02</td><td>サンプル内装</td><td><span class="pill pill--run">進行中</span></td></tr>
+                <tr><td class="strong">電気設備</td><td>07/01〜07/04</td><td>テスト電工</td><td><span class="pill pill--idle">予定</span></td></tr>
+                <tr><td class="strong">完了検査</td><td>07/14</td><td>—</td><td><span class="pill pill--idle">予定</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 原価・見積 -->
+        <section class="screen" id="screen-cost" hidden>
+          <div class="app-headline"><h1>原価・見積</h1><p>案件ごとの予算と実績</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">受注総額</p><p class="kpi__val">¥184.2M</p><span class="kpi__trend trend-flat">進行中14件</span></div>
+            <div class="kpi"><p class="kpi__label">実行予算消化</p><p class="kpi__val">63<small>%</small></p><span class="kpi__trend trend-flat">計画内</span></div>
+            <div class="kpi kpi--alert"><p class="kpi__label">予算超過</p><p class="kpi__val">1<small>件</small></p><span class="kpi__trend trend-flat">B商店 改装</span></div>
+            <div class="kpi"><p class="kpi__label">平均粗利率</p><p class="kpi__val">21.6<small>%</small></p><span class="kpi__trend trend-up">▲ +1.8pt</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">案件別 原価状況</h2></div>
+            <table class="dtable">
+              <thead><tr><th>案件名</th><th class="num">見積原価</th><th class="num">実績原価</th><th class="num">差異</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">A邸 新築工事</td><td class="num">¥22.0M</td><td class="num">¥21.4M</td><td class="num">-2.7%</td><td><span class="pill pill--ok">良好</span></td></tr>
+                <tr><td class="strong">B商店 改装</td><td class="num">¥8.4M</td><td class="num">¥9.0M</td><td class="num">+7.1%</td><td><span class="pill pill--bad">超過</span></td></tr>
+                <tr><td class="strong">C工場 増築</td><td class="num">¥31.5M</td><td class="num">¥9.6M</td><td class="num">進行中</td><td><span class="pill pill--run">監視中</span></td></tr>
+                <tr><td class="strong">D邸 外構</td><td class="num">¥3.8M</td><td class="num">¥3.5M</td><td class="num">-7.9%</td><td><span class="pill pill--ok">良好</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 職人・配置 -->
+        <section class="screen" id="screen-worker" hidden>
+          <div class="app-headline"><h1>職人・配置</h1><p>本日の人員配置</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">本日の配置状況</h2><span class="chip">稼働 18名</span></div>
+            <table class="dtable">
+              <thead><tr><th>氏名 / 班</th><th>職種</th><th>配置現場</th><th>稼働</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">田中班（4名）</td><td>大工</td><td>A邸 新築工事</td><td>終日</td><td><span class="pill pill--ok">稼働中</span></td></tr>
+                <tr><td class="strong">佐藤班（3名）</td><td>内装</td><td>B商店 改装</td><td>終日</td><td><span class="pill pill--ok">稼働中</span></td></tr>
+                <tr><td class="strong">鈴木班（5名）</td><td>土工</td><td>C工場 増築</td><td>終日</td><td><span class="pill pill--warn">増員推奨</span></td></tr>
+                <tr><td class="strong">高橋班（2名）</td><td>解体</td><td>E団地 改修</td><td>午前</td><td><span class="pill pill--ok">稼働中</span></td></tr>
+                <tr><td class="strong">山本（1名）</td><td>電気</td><td>—</td><td>—</td><td><span class="pill pill--idle">空き</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 写真・報告 -->
+        <section class="screen" id="screen-report" hidden>
+          <div class="app-headline"><h1>写真・報告</h1><p>現場からのスマホ報告（本日）</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">本日の現場報告</h2><span class="chip">12件</span></div>
+            <table class="dtable">
+              <thead><tr><th>時刻</th><th>現場</th><th>報告者</th><th>内容</th><th>写真</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">15:20</td><td>A邸 新築工事</td><td>田中</td><td>クロス施工 進捗報告</td><td><span class="pill pill--run">3枚</span></td></tr>
+                <tr><td class="strong">13:05</td><td>C工場 増築</td><td>鈴木</td><td>基礎配筋 完了・検査依頼</td><td><span class="pill pill--run">5枚</span></td></tr>
+                <tr><td class="strong">11:40</td><td>D邸 外構</td><td>田中</td><td>ブロック積み 完了</td><td><span class="pill pill--run">2枚</span></td></tr>
+                <tr><td class="strong">09:15</td><td>B商店 改装</td><td>佐藤</td><td>追加資材の相談</td><td><span class="pill pill--idle">なし</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 協力会社 -->
+        <section class="screen" id="screen-partner" hidden>
+          <div class="app-headline"><h1>協力会社</h1><p>協力会社の稼働と評価</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">協力会社一覧</h2></div>
+            <table class="dtable">
+              <thead><tr><th>会社名</th><th>専門</th><th>現在の現場</th><th>評価</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">サンプル内装</td><td>内装・クロス</td><td>A邸 / B商店</td><td>★4.6</td><td><span class="pill pill--ok">稼働中</span></td></tr>
+                <tr><td class="strong">テスト電工</td><td>電気設備</td><td>A邸</td><td>★4.8</td><td><span class="pill pill--run">予定</span></td></tr>
+                <tr><td class="strong">モデル設備</td><td>給排水</td><td>—</td><td>★4.3</td><td><span class="pill pill--idle">空き</span></td></tr>
+                <tr><td class="strong">サンプル基礎</td><td>土工・基礎</td><td>C工場</td><td>★4.5</td><td><span class="pill pill--ok">稼働中</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 請求・入金 -->
+        <section class="screen" id="screen-billing" hidden>
+          <div class="app-headline"><h1>請求・入金</h1><p>請求書発行と入金管理</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">今月請求</p><p class="kpi__val">¥42.6M</p><span class="kpi__trend trend-flat">6件</span></div>
+            <div class="kpi"><p class="kpi__label">入金済</p><p class="kpi__val">¥31.0M</p><span class="kpi__trend trend-up">▲ 4件</span></div>
+            <div class="kpi kpi--alert"><p class="kpi__label">入金待ち</p><p class="kpi__val">¥11.6M</p><span class="kpi__trend trend-flat">2件</span></div>
+            <div class="kpi"><p class="kpi__label">期日超過</p><p class="kpi__val">0<small>件</small></p><span class="kpi__trend trend-up">▲ なし</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">請求一覧</h2></div>
+            <table class="dtable">
+              <thead><tr><th>請求No.</th><th>案件名</th><th class="num">金額</th><th>入金期日</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">IV-0331</td><td>D邸 外構</td><td class="num">¥3.8M</td><td>07/31</td><td><span class="pill pill--run">発行済</span></td></tr>
+                <tr><td class="strong">IV-0330</td><td>A邸（中間金）</td><td class="num">¥7.8M</td><td>07/20</td><td><span class="pill pill--run">発行済</span></td></tr>
+                <tr><td class="strong">IV-0329</td><td>過年度 F社改修</td><td class="num">¥12.4M</td><td>06/30</td><td><span class="pill pill--ok">入金済</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <div class="demo-cta">
+          <p class="demo-cta__t">現場とオフィスを、ひとつに。<span>工程・原価・写真・請求まで、紙やExcelの手間をまるごと軽くします。</span></p>
+          <div class="demo-cta__btns">
+            <a href="../contact.html" class="b-gold">無料で相談する →</a>
+            <a href="../cases.html" class="b-line">他の開発事例を見る</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/demo.js"></script>
+</body>
+</html>

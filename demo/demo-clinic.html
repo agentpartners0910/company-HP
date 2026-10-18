@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>クリニック向け 予約・Web問診管理｜提案デモ｜株式会社エージェントパートナーズ</title>
+  <meta name="description" content="医療・クリニック向けの予約・Web問診管理システムの提案デモ画面（サンプル）。予約状況と待ち時間を可視化し、AIがWeb問診の要約と呼び出し順の最適化を支援します。" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="../assets/favicon_32.png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/demo.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-top">
+      <div class="app-top__left">
+        <span class="app-logo">AGENT<b>PARTNERS</b></span>
+        <span class="demo-badge">DEMO</span>
+        <span class="app-sys">クリニック向け｜予約・Web問診管理</span>
+      </div>
+      <div class="app-top__right">
+        <span class="app-user">サンプル内科クリニック / 受付</span>
+        <a href="../cases.html" class="app-back">← 開発事例へ戻る</a>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <aside class="app-side">
+        <p class="side-cap">MENU</p>
+        <nav class="side-nav">
+          <button type="button" class="side-link is-active" data-screen="screen-dashboard" aria-current="page"><span class="ico"></span>本日の受付</button>
+          <button type="button" class="side-link" data-screen="screen-calendar"><span class="ico"></span>予約カレンダー</button>
+          <button type="button" class="side-link" data-screen="screen-interview"><span class="ico"></span>Web問診</button>
+          <button type="button" class="side-link" data-screen="screen-patients"><span class="ico"></span>患者管理</button>
+          <button type="button" class="side-link" data-screen="screen-waiting"><span class="ico"></span>呼び出し・待合</button>
+          <button type="button" class="side-link" data-screen="screen-notice"><span class="ico"></span>お知らせ配信</button>
+          <button type="button" class="side-link" data-screen="screen-report"><span class="ico"></span>集計・分析</button>
+        </nav>
+        <div class="side-foot">これは提案用のデモ画面です。メニューを押すと画面が切り替わります。</div>
+      </aside>
+
+      <main class="app-main">
+        <div class="demo-note">本画面は提案用のデモです。表示している患者名・データはすべて架空のサンプルです。</div>
+
+        <!-- 本日の受付 -->
+        <section class="screen" id="screen-dashboard">
+          <div class="app-headline"><h1>本日の受付状況</h1><p>2026/06/27｜午前診</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">本日の予約</p><p class="kpi__val">64<small>件</small></p><span class="kpi__trend trend-up">▲ 前週比 +8件</span></div>
+            <div class="kpi"><p class="kpi__label">来院済</p><p class="kpi__val">29<small>名</small></p><span class="kpi__trend trend-flat">受付待ち 4名</span></div>
+            <div class="kpi kpi--alert"><p class="kpi__label">現在の待ち時間</p><p class="kpi__val">18<small>分</small></p><span class="kpi__trend trend-flat">ピーク予測 11:00</span></div>
+            <div class="kpi"><p class="kpi__label">Web問診 完了率</p><p class="kpi__val">82<small>%</small></p><span class="kpi__trend trend-up">▲ 受付時間を短縮</span></div>
+          </section>
+          <div class="grid2">
+            <section class="panel">
+              <div class="panel__head"><h2 class="panel__title">時間帯別 予約数（午前）</h2><span class="panel__sub">件</span></div>
+              <div class="chart">
+                <div class="chart__col"><div class="chart__bar" style="height:55%"><span>11</span></div><span class="chart__x">9:00</span></div>
+                <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:95%"><span>19</span></div><span class="chart__x">10:00</span></div>
+                <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:90%"><span>18</span></div><span class="chart__x">11:00</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:50%"><span>10</span></div><span class="chart__x">12:00</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:30%"><span>6</span></div><span class="chart__x">13:00</span></div>
+              </div>
+            </section>
+            <section class="panel ai-panel">
+              <div class="panel__head"><h2 class="panel__title">AIアシスタント</h2></div>
+              <div class="ai-item"><p class="ai-item__tag">Web問診サマリー</p><p class="ai-item__body">次の患者「佐藤様」の問診を要約：<b>3日前からの発熱・咳、既往に高血圧</b>。アレルギー申告なし。詳細は問診票をご確認ください。</p><div class="ai-actions"><button class="ai-btn ai-btn--gold">問診票を開く</button></div></div>
+              <div class="ai-item"><p class="ai-item__tag">呼び出し最適化</p><p class="ai-item__body">10:00台が混雑予測。<b>予約なしの軽症2名を10:40枠へ案内</b>すると、待ち時間を平準化できます。</p></div>
+            </section>
+          </div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">本日の予約一覧（午前）</h2><span class="chip">受付待ち 4名</span></div>
+            <table class="dtable">
+              <thead><tr><th>時間</th><th>患者名</th><th>区分</th><th>Web問診</th><th>担当</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">10:20</td><td>田中 様</td><td>再診</td><td>完了</td><td>第1診察室</td><td><span class="pill pill--ok">診察中</span></td></tr>
+                <tr><td class="strong">10:30</td><td>佐藤 様</td><td>初診</td><td>完了</td><td>第1診察室</td><td><span class="pill pill--run">呼出待ち</span></td></tr>
+                <tr><td class="strong">10:30</td><td>鈴木 様</td><td>再診</td><td>未入力</td><td>第2診察室</td><td><span class="pill pill--warn">問診待ち</span></td></tr>
+                <tr><td class="strong">10:40</td><td>高橋 様</td><td>再診</td><td>完了</td><td>—</td><td><span class="pill pill--idle">受付前</span></td></tr>
+                <tr><td class="strong">10:50</td><td>伊藤 様</td><td>初診</td><td>完了</td><td>—</td><td><span class="pill pill--idle">受付前</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 予約カレンダー -->
+        <section class="screen" id="screen-calendar" hidden>
+          <div class="app-headline"><h1>予約カレンダー</h1><p>枠の空き状況（今週）</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">時間枠の予約状況</h2><span class="chip">○空き ／ △残少 ／ ×満</span></div>
+            <table class="dtable">
+              <thead><tr><th>時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">9:00</td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--warn">△</span></td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--warn">△</span></td></tr>
+                <tr><td class="strong">10:00</td><td><span class="pill pill--bad">×</span></td><td><span class="pill pill--warn">△</span></td><td><span class="pill pill--warn">△</span></td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--bad">×</span></td></tr>
+                <tr><td class="strong">11:00</td><td><span class="pill pill--warn">△</span></td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--warn">△</span></td><td><span class="pill pill--warn">△</span></td></tr>
+                <tr><td class="strong">15:00</td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--ok">○</span></td><td>休診</td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--ok">○</span></td></tr>
+                <tr><td class="strong">16:00</td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--warn">△</span></td><td>休診</td><td><span class="pill pill--ok">○</span></td><td><span class="pill pill--warn">△</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- Web問診 -->
+        <section class="screen" id="screen-interview" hidden>
+          <div class="app-headline"><h1>Web問診</h1><p>来院前に入力された問診（本日）</p></div>
+          <div class="grid2">
+            <section class="panel">
+              <div class="panel__head"><h2 class="panel__title">問診 提出状況</h2><span class="chip">完了率 82%</span></div>
+              <table class="dtable">
+                <thead><tr><th>患者名</th><th>区分</th><th>提出</th><th>状態</th></tr></thead>
+                <tbody>
+                  <tr><td class="strong">佐藤 様</td><td>初診</td><td>来院前</td><td><span class="pill pill--ok">完了</span></td></tr>
+                  <tr><td class="strong">鈴木 様</td><td>再診</td><td>—</td><td><span class="pill pill--warn">未入力</span></td></tr>
+                  <tr><td class="strong">高橋 様</td><td>再診</td><td>来院前</td><td><span class="pill pill--ok">完了</span></td></tr>
+                  <tr><td class="strong">伊藤 様</td><td>初診</td><td>来院前</td><td><span class="pill pill--ok">完了</span></td></tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="panel ai-panel">
+              <div class="panel__head"><h2 class="panel__title">AI問診サマリー</h2></div>
+              <div class="ai-item"><p class="ai-item__tag">佐藤 様（初診）</p><p class="ai-item__body"><b>3日前からの発熱・咳</b>。既往に高血圧、内服あり。アレルギー申告なし。受診目的：発熱の相談。</p><div class="ai-actions"><button class="ai-btn ai-btn--gold">問診票を開く</button></div></div>
+            </section>
+          </div>
+        </section>
+
+        <!-- 患者管理 -->
+        <section class="screen" id="screen-patients" hidden>
+          <div class="app-headline"><h1>患者管理</h1><p>患者情報・受診履歴（架空）</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">患者一覧</h2><span class="chip">検索・絞り込み可</span></div>
+            <table class="dtable">
+              <thead><tr><th>患者番号</th><th>氏名</th><th>年代</th><th>最終受診</th><th>区分</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">P-10231</td><td>田中 様</td><td>60代</td><td>2026/06/27</td><td>定期通院</td><td><span class="pill pill--ok">通院中</span></td></tr>
+                <tr><td class="strong">P-10488</td><td>佐藤 様</td><td>40代</td><td>2026/06/27</td><td>初診</td><td><span class="pill pill--run">受診中</span></td></tr>
+                <tr><td class="strong">P-09920</td><td>鈴木 様</td><td>30代</td><td>2026/05/12</td><td>再診</td><td><span class="pill pill--idle">経過観察</span></td></tr>
+                <tr><td class="strong">P-10677</td><td>高橋 様</td><td>50代</td><td>2026/06/13</td><td>定期通院</td><td><span class="pill pill--ok">通院中</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 呼び出し・待合 -->
+        <section class="screen" id="screen-waiting" hidden>
+          <div class="app-headline"><h1>呼び出し・待合</h1><p>待合の状況と呼び出し</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">待合の人数</p><p class="kpi__val">7<small>名</small></p><span class="kpi__trend trend-flat">うち呼出待ち 4</span></div>
+            <div class="kpi kpi--alert"><p class="kpi__label">最大待ち時間</p><p class="kpi__val">24<small>分</small></p><span class="kpi__trend trend-flat">鈴木 様</span></div>
+            <div class="kpi"><p class="kpi__label">平均待ち</p><p class="kpi__val">15<small>分</small></p><span class="kpi__trend trend-down">▼ 改善中</span></div>
+            <div class="kpi"><p class="kpi__label">診察室稼働</p><p class="kpi__val">2<small>/2</small></p><span class="kpi__trend trend-flat">フル稼働</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">待合 状況</h2><span class="chip">受付順</span></div>
+            <table class="dtable">
+              <thead><tr><th>受付No.</th><th>患者名</th><th>待ち時間</th><th>呼び出し</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">A-12</td><td>鈴木 様</td><td>24分</td><td>第2診察室</td><td><span class="pill pill--warn">呼出中</span></td></tr>
+                <tr><td class="strong">A-13</td><td>高橋 様</td><td>12分</td><td>—</td><td><span class="pill pill--run">待機</span></td></tr>
+                <tr><td class="strong">A-14</td><td>伊藤 様</td><td>8分</td><td>—</td><td><span class="pill pill--run">待機</span></td></tr>
+                <tr><td class="strong">A-15</td><td>渡辺 様</td><td>3分</td><td>—</td><td><span class="pill pill--idle">受付済</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- お知らせ配信 -->
+        <section class="screen" id="screen-notice" hidden>
+          <div class="app-headline"><h1>お知らせ配信</h1><p>患者さまへの一斉連絡（LINE・メール）</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">配信履歴</h2><span class="chip">予約リマインドは自動</span></div>
+            <table class="dtable">
+              <thead><tr><th>配信日</th><th>件名</th><th>対象</th><th>手段</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">06/27</td><td>明日の予約リマインド</td><td>翌日予約者</td><td>LINE</td><td><span class="pill pill--ok">自動送信</span></td></tr>
+                <tr><td class="strong">06/20</td><td>インフルワクチン予約開始</td><td>全患者</td><td>LINE/メール</td><td><span class="pill pill--ok">送信済</span></td></tr>
+                <tr><td class="strong">06/15</td><td>休診のお知らせ</td><td>全患者</td><td>LINE</td><td><span class="pill pill--ok">送信済</span></td></tr>
+                <tr><td class="strong">07/01</td><td>健診キャンペーン</td><td>40代以上</td><td>メール</td><td><span class="pill pill--idle">予約配信</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 集計・分析 -->
+        <section class="screen" id="screen-report" hidden>
+          <div class="app-headline"><h1>集計・分析</h1><p>月次サマリー（6月）</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">のべ来院</p><p class="kpi__val">1,284<small>名</small></p><span class="kpi__trend trend-up">▲ 前月比 +5.2%</span></div>
+            <div class="kpi"><p class="kpi__label">初診比率</p><p class="kpi__val">22<small>%</small></p><span class="kpi__trend trend-up">▲ +2pt</span></div>
+            <div class="kpi"><p class="kpi__label">平均待ち時間</p><p class="kpi__val">16<small>分</small></p><span class="kpi__trend trend-down">▼ -6分</span></div>
+            <div class="kpi"><p class="kpi__label">Web問診率</p><p class="kpi__val">79<small>%</small></p><span class="kpi__trend trend-up">▲ +11pt</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">曜日別 来院数</h2><span class="panel__sub">名</span></div>
+            <div class="chart">
+              <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:88%"><span>62</span></div><span class="chart__x">月</span></div>
+              <div class="chart__col"><div class="chart__bar" style="height:64%"><span>45</span></div><span class="chart__x">火</span></div>
+              <div class="chart__col"><div class="chart__bar" style="height:40%"><span>28</span></div><span class="chart__x">水</span></div>
+              <div class="chart__col"><div class="chart__bar" style="height:66%"><span>47</span></div><span class="chart__x">木</span></div>
+              <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:80%"><span>56</span></div><span class="chart__x">金</span></div>
+              <div class="chart__col"><div class="chart__bar" style="height:54%"><span>38</span></div><span class="chart__x">土</span></div>
+            </div>
+          </section>
+        </section>
+
+        <div class="demo-cta">
+          <p class="demo-cta__t">受付の混雑も、患者さんの不安も軽く。<span>予約・Web問診・呼び出しをつなぎ、スタッフの負担と待ち時間を減らします。</span></p>
+          <div class="demo-cta__btns">
+            <a href="../contact.html" class="b-gold">無料で相談する →</a>
+            <a href="../cases.html" class="b-line">他の開発事例を見る</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>チャット入力ログ｜管理画面｜エージェントパートナーズ</title>
+  <link rel="icon" href="assets/favicon_32.png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="adm">
+  <!-- 簡易ゲート（クライアント側のみ。本格運用はサーバー認証に置き換えてください） -->
+  <div class="adm-gate" id="admGate">
+    <div class="adm-gate__box">
+      <img src="assets/logo-horizontal.svg" alt="エージェントパートナーズ" />
+      <h2>管理画面</h2>
+      <p>チャット入力ログを表示します。<br>パスフレーズを入力してください。</p>
+      <form id="gateForm">
+        <input type="password" id="gateInput" placeholder="パスフレーズ" autocomplete="off" aria-label="パスフレーズ" />
+        <p class="adm-gate__err" id="gateErr"></p>
+        <button type="submit" class="adm-btn adm-btn--navy" style="width:100%">ログイン</button>
+      </form>
+    </div>
+  </div>
+
+  <header class="adm-header">
+    <div class="container adm-header__inner">
+      <div class="adm-header__brand">
+        <img src="assets/logo-horizontal-dark.svg" alt="エージェントパートナーズ" />
+        <b>管理画面</b><span>ADMIN</span>
+      </div>
+      <a href="index.html">← サイトを表示</a>
+    </div>
+  </header>
+
+  <main class="adm-main">
+    <div class="container">
+      <h1 class="adm-h1">チャットボット 入力ログ</h1>
+      <p class="adm-sub">訪問者がチャットボットに入力・選択した内容の一覧です。FAQ改善のヒントにご活用ください。</p>
+
+      <!-- データ取得元バナー -->
+      <p class="adm-source" id="srcBanner">読み込み中…</p>
+
+      <!-- 統計 -->
+      <div class="adm-stat-grid">
+        <div class="adm-stat"><b id="stTotal">0</b><span>総入力数</span></div>
+        <div class="adm-stat"><b id="stAnswered">0</b><span>回答できた数</span></div>
+        <div class="adm-stat"><b class="warn" id="stUnanswered">0</b><span>未回答（要対応）</span></div>
+        <div class="adm-stat"><b id="stRate">0%</b><span>未回答率</span></div>
+      </div>
+
+      <!-- 未回答ワードランキング -->
+      <section class="adm-card">
+        <h3 class="adm-card__title">未回答だった質問 TOP10 <small>FAQ・キーワード追加の優先候補</small></h3>
+        <ol class="adm-rank" id="rankList"></ol>
+      </section>
+
+      <!-- 一覧 -->
+      <section class="adm-card">
+        <h3 class="adm-card__title">入力ログ一覧</h3>
+        <div class="adm-toolbar">
+          <input type="text" id="fltKeyword" placeholder="入力内容で検索…" />
+          <select id="fltStatus">
+            <option value="all">回答状況：すべて</option>
+            <option value="answered">回答できた</option>
+            <option value="unanswered">未回答のみ</option>
+          </select>
+          <select id="fltSource">
+            <option value="all">種別：すべて</option>
+            <option value="input">自由入力</option>
+            <option value="suggest">候補から選択</option>
+            <option value="related">関連質問</option>
+            <option value="category">カテゴリから</option>
+            <option value="faq-page">FAQページ経由</option>
+          </select>
+          <button class="adm-btn" id="btnRefresh">更新</button>
+          <button class="adm-btn adm-btn--navy" id="btnCsv">CSVエクスポート</button>
+          <button class="adm-btn" id="btnSeed">サンプル投入</button>
+          <button class="adm-btn adm-btn--danger" id="btnClear">ログ消去</button>
+        </div>
+        <div class="adm-scroll">
+          <table class="adm-table">
+            <thead>
+              <tr><th>日時</th><th>入力内容</th><th>種別</th><th>回答</th><th>該当FAQ</th><th>ページ</th></tr>
+            </thead>
+            <tbody id="logBody"></tbody>
+          </table>
+        </div>
+        <p class="adm-empty" id="emptyMsg" hidden>ログがありません。チャットボットで質問すると記録されます。<br>動作確認には「サンプル投入」をお試しください。</p>
+      </section>
+
+      <!-- 注意書き -->
+      <section class="adm-card">
+        <h3 class="adm-card__title">この管理画面について</h3>
+        <p class="adm-note">
+          ● <strong>保存先（簡易ファイルDB）</strong>：付属の Node サーバー起動中は、入力が <code>server/data/chat-logs.ndjson</code>（1行=1レコードのNDJSON）に保存され、<strong>全訪問者分が集約</strong>されます。この画面はそのファイルを読み出して表示します。<br>
+          ● <strong>起動方法</strong>：<code>html/server/</code> で <code>npm start</code>（または <code>node server.js</code>）→ ブラウザで <code>http://localhost:3000/admin.html</code> を開く。<br>
+          ● <strong>フォールバック</strong>：サーバー未起動／<code>file://</code> で直接開いた場合は、そのブラウザの <code>localStorage</code> の記録を表示します（上部バナーに取得元を表示）。<br>
+          ● <strong>セキュリティ</strong>：このログイン枠は簡易的なものです。公開運用時はサーバー側の認証・アクセス制限へ置き換えてください。サーバーに <code>ADMIN_TOKEN</code> を設定した場合は、本ファイル冒頭の <code>ADMIN_TOKEN</code> に同じ値を設定してください。<br>
+          ● <strong>個人情報</strong>：自由入力には個人情報が含まれる可能性があります。保管期間は社内ルールに従い、不要時は「ログ消去」を。
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/faq-data.js"></script>
+  <script>
+  (function () {
+    "use strict";
+    var LOG_KEY = "ap_chat_logs";
+    var ADMIN_PASS = "agent-admin";   // ★運用前に変更してください（簡易ゲート）
+    var SESSION_KEY = "ap_admin_ok";
+    var ADMIN_TOKEN = "";             // ★サーバーで ADMIN_TOKEN を設定した場合は同じ値を入れる
+
+    /* ---------- 簡易ゲート ---------- */
+    var gate = document.getElementById("admGate");
+    function unlock() { gate.style.display = "none"; refresh(); }
+    if (sessionStorage.getItem(SESSION_KEY) === "1") { unlock(); }
+    document.getElementById("gateForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = document.getElementById("gateInput").value;
+      if (v === ADMIN_PASS) { sessionStorage.setItem(SESSION_KEY, "1"); unlock(); }
+      else { document.getElementById("gateErr").textContent = "パスフレーズが違います。"; }
+    });
+
+    /* ---------- データ層（サーバー簡易DB優先 / localStorageフォールバック） ---------- */
+    var mode = "local";       // "server" | "local"
+    var CACHE = [];           // 最新の全件
+
+    function authHeaders() { var h = {}; if (ADMIN_TOKEN) h["x-admin-token"] = ADMIN_TOKEN; return h; }
+
+    function fetchAll() {
+      return fetch("/api/chat-logs", { headers: authHeaders() })
+        .then(function (res) {
+          if (!res.ok) throw new Error("server " + res.status);
+          return res.json();
+        })
+        .then(function (j) {
+          if (!j || !j.ok) throw new Error("bad payload");
+          mode = "server";
+          return j.data || [];
+        })
+        .catch(function () {
+          mode = "local";
+          try { return JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); } catch (_) { return []; }
+        });
+    }
+
+    function postEntry(entry) {
+      if (mode === "server") {
+        return fetch("/api/chat-log", {
+          method: "POST",
+          headers: Object.assign({ "Content-Type": "application/json" }, authHeaders()),
+          body: JSON.stringify(entry),
+        }).then(function () {}).catch(function () {});
+      }
+      try {
+        var a = JSON.parse(localStorage.getItem(LOG_KEY) || "[]");
+        a.push(entry);
+        localStorage.setItem(LOG_KEY, JSON.stringify(a));
+      } catch (_) {}
+      return Promise.resolve();
+    }
+
+    function clearAll() {
+      var ops = [];
+      if (mode === "server") {
+        ops.push(fetch("/api/chat-logs", { method: "DELETE", headers: authHeaders() }).then(function () {}).catch(function () {}));
+      }
+      try { localStorage.removeItem(LOG_KEY); } catch (_) {}
+      return Promise.all(ops);
+    }
+
+    function refresh() {
+      return fetchAll().then(function (rows) { CACHE = rows || []; renderBanner(); render(); });
+    }
+
+    function renderBanner() {
+      var el = document.getElementById("srcBanner");
+      if (mode === "server") {
+        el.className = "adm-source adm-source--server";
+        el.innerHTML = "● データ取得元：<strong>サーバー簡易DB</strong>（server/data/chat-logs.ndjson）— 全訪問者の入力を集約中";
+      } else {
+        el.className = "adm-source adm-source--local";
+        el.innerHTML = "● データ取得元：<strong>このブラウザ（localStorage）</strong> — サーバー未接続。集約には <code>html/server/</code> で <code>npm start</code> 後、<code>http://localhost:3000/admin.html</code> を開いてください。";
+      }
+    }
+
+    /* ---------- 表示ユーティリティ ---------- */
+    var FAQ = window.AP_FAQ || [];
+    function qOf(id) { var it = FAQ.find(function (x) { return x.id === id; }); return it ? it.q : ""; }
+    var SRC_LABEL = { input: "自由入力", suggest: "候補選択", related: "関連質問", category: "カテゴリ", "faq-page": "FAQページ" };
+    function fmt(iso) {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return iso || "";
+      function p(n) { return (n < 10 ? "0" : "") + n; }
+      return d.getFullYear() + "/" + p(d.getMonth() + 1) + "/" + p(d.getDate()) + " " + p(d.getHours()) + ":" + p(d.getMinutes());
+    }
+    function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
+
+    /* ---------- フィルタ ---------- */
+    function applyFilters(rows) {
+      var kw = (document.getElementById("fltKeyword").value || "").toLowerCase().trim();
+      var st = document.getElementById("fltStatus").value;
+      var sr = document.getElementById("fltSource").value;
+      return rows.filter(function (r) {
+        if (st === "answered" && !r.matched) return false;
+        if (st === "unanswered" && r.matched) return false;
+        if (sr !== "all" && r.source !== sr) return false;
+        if (kw && String(r.q || "").toLowerCase().indexOf(kw) === -1) return false;
+        return true;
+      });
+    }
+
+    /* ---------- 描画 ---------- */
+    function render() {
+      var all = CACHE;
+      var total = all.length;
+      var ans = all.filter(function (r) { return r.matched; }).length;
+      var un = total - ans;
+      document.getElementById("stTotal").textContent = total;
+      document.getElementById("stAnswered").textContent = ans;
+      document.getElementById("stUnanswered").textContent = un;
+      document.getElementById("stRate").textContent = (total ? Math.round((un / total) * 100) : 0) + "%";
+
+      var counts = {};
+      all.forEach(function (r) {
+        if (r.matched) return;
+        var key = String(r.q || "").trim();
+        if (!key) return;
+        counts[key] = (counts[key] || 0) + 1;
+      });
+      var ranked = Object.keys(counts).map(function (k) { return { q: k, c: counts[k] }; })
+        .sort(function (a, b) { return b.c - a.c; }).slice(0, 10);
+      var rankEl = document.getElementById("rankList");
+      rankEl.innerHTML = "";
+      if (!ranked.length) {
+        rankEl.innerHTML = '<li class="adm-empty">未回答の入力はまだありません。</li>';
+      } else {
+        ranked.forEach(function (r, i) {
+          var li = document.createElement("li");
+          li.innerHTML = '<span class="adm-rank__n">' + (i + 1) + '</span><span class="adm-rank__q">' + esc(r.q) + '</span><span class="adm-rank__c">' + r.c + '件</span>';
+          rankEl.appendChild(li);
+        });
+      }
+
+      var rows = applyFilters(all.slice()).reverse();
+      var body = document.getElementById("logBody");
+      var empty = document.getElementById("emptyMsg");
+      body.innerHTML = "";
+      if (!rows.length) { empty.hidden = false; return; }
+      empty.hidden = true;
+      rows.forEach(function (r) {
+        var tr = document.createElement("tr");
+        var badge = r.matched
+          ? '<span class="adm-badge adm-badge--ok">回答</span>'
+          : '<span class="adm-badge adm-badge--ng">未回答</span>';
+        var faq = r.id ? '<span title="' + esc(qOf(r.id)) + '">' + esc(r.id) + '</span>' : '<span style="color:#b9bfcc">—</span>';
+        tr.innerHTML =
+          '<td class="adm-table__time">' + esc(fmt(r.t)) + '</td>' +
+          '<td class="adm-table__q">' + esc(r.q) + '</td>' +
+          '<td><span class="adm-badge adm-badge--src">' + esc(SRC_LABEL[r.source] || r.source || "-") + '</span></td>' +
+          '<td>' + badge + (typeof r.score === "number" ? ' <small style="color:#9aa1b4">(' + r.score + ')</small>' : '') + '</td>' +
+          '<td>' + faq + '</td>' +
+          '<td style="color:#6b7488;white-space:nowrap">' + esc(r.page || "") + '</td>';
+        body.appendChild(tr);
+      });
+    }
+
+    /* ---------- CSV ---------- */
+    function toCsv() {
+      var rows = applyFilters(CACHE.slice()).reverse();
+      var head = ["日時", "入力内容", "種別", "回答状況", "スコア", "該当FAQ_ID", "ページ"];
+      var lines = [head.join(",")];
+      rows.forEach(function (r) {
+        var cells = [fmt(r.t), r.q, SRC_LABEL[r.source] || r.source || "", r.matched ? "回答" : "未回答",
+          (typeof r.score === "number" ? r.score : ""), r.id || "", r.page || ""];
+        lines.push(cells.map(function (c) { return '"' + String(c == null ? "" : c).replace(/"/g, '""') + '"'; }).join(","));
+      });
+      var blob = new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "chat-logs.csv";
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    /* ---------- サンプル投入（動作確認用） ---------- */
+    function seed() {
+      if (!confirm("動作確認用のサンプルログを10件追加します。よろしいですか？")) return;
+      var samples = [
+        { q: "料金はいくらですか？", source: "input", matched: true, id: "q-price", score: 6 },
+        { q: "AIって何ができるの", source: "input", matched: true, id: "q-ai", score: 5 },
+        { q: "補助金つかえますか", source: "input", matched: true, id: "q-subsidy", score: 4 },
+        { q: "助成金の申請を代行してほしい", source: "input", matched: false, id: null, score: 1 },
+        { q: "ホームページ制作はできますか", source: "input", matched: false, id: null, score: 0 },
+        { q: "kintoneの導入支援はやってる？", source: "input", matched: false, id: null, score: 0 },
+        { q: "ホームページ制作はできますか", source: "input", matched: false, id: null, score: 0 },
+        { q: "採用は未経験でも応募できますか？", source: "suggest", matched: true, id: "q-recruit", score: null },
+        { q: "電話番号を教えて", source: "input", matched: true, id: "q-contact", score: 5 },
+        { q: "セキュリティは大丈夫ですか", source: "input", matched: true, id: "q-security", score: 4 },
+      ];
+      var now = Date.now();
+      var chain = Promise.resolve();
+      samples.forEach(function (s, i) {
+        var entry = {
+          t: new Date(now - (samples.length - i) * 3600000).toISOString(),
+          page: ["index.html", "services.html", "faq.html"][i % 3],
+          q: s.q, source: s.source, matched: s.matched, id: s.id, score: s.score,
+        };
+        chain = chain.then(function () { return postEntry(entry); });
+      });
+      chain.then(function () { return refresh(); });
+    }
+
+    /* ---------- イベント ---------- */
+    document.getElementById("fltKeyword").addEventListener("input", render);
+    document.getElementById("fltStatus").addEventListener("change", render);
+    document.getElementById("fltSource").addEventListener("change", render);
+    document.getElementById("btnRefresh").addEventListener("click", refresh);
+    document.getElementById("btnCsv").addEventListener("click", toCsv);
+    document.getElementById("btnSeed").addEventListener("click", seed);
+    document.getElementById("btnClear").addEventListener("click", function () {
+      if (confirm("保存されている入力ログをすべて削除します。元に戻せません。よろしいですか？")) {
+        clearAll().then(function () { return refresh(); });
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

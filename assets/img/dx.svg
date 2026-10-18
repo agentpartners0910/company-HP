@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="DX伴走コンサルティングのイメージ">
+  <defs>
+    <radialGradient id="spot" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#2a447f"/><stop offset="52%" stop-color="#16234c"/><stop offset="100%" stop-color="#091029"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset="1" stop-color="#bb8a30"/></linearGradient>
+    <linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ceee6"/><stop offset="1" stop-color="#4aa6d8"/></linearGradient>
+    <linearGradient id="road" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4aa6d8"/><stop offset="1" stop-color="#f6e2a6"/></linearGradient>
+    <radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#eccd7c" stop-opacity=".55"/><stop offset="100%" stop-color="#eccd7c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="ac" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#56c7d6" stop-opacity=".5"/><stop offset="100%" stop-color="#56c7d6" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#7e93c8" stroke-opacity=".09"/></pattern>
+    <style>@keyframes p{0%,100%{opacity:.5}50%{opacity:1}}.pulse{animation:p 3s ease-in-out infinite}@media(prefers-reduced-motion:reduce){.pulse{animation:none}}</style>
+  </defs>
+  <rect width="480" height="360" fill="url(#spot)"/>
+  <circle cx="404" cy="64" r="150" fill="url(#ag)"/><circle cx="60" cy="330" r="150" fill="url(#ac)"/>
+  <rect width="480" height="360" fill="url(#grid)"/>
+  <!-- road -->
+  <path d="M64 300 C 150 300 128 196 220 196 C 322 196 300 104 404 104" fill="none" stroke="#1d2c58" stroke-width="24" stroke-linecap="round" opacity=".9"/>
+  <path d="M64 300 C 150 300 128 196 220 196 C 322 196 300 104 404 104" fill="none" stroke="url(#road)" stroke-width="4" stroke-dasharray="2 16" stroke-linecap="round" filter="url(#glow)"/>
+  <!-- milestones -->
+  <g fill="url(#cy)" filter="url(#glow)"><circle cx="120" cy="286" r="6"/><circle cx="220" cy="196" r="6"/><circle cx="318" cy="146" r="6"/></g>
+  <!-- goal flag -->
+  <g transform="translate(404,104)" filter="url(#glow)">
+    <line x1="0" y1="8" x2="0" y2="-50" stroke="url(#gold)" stroke-width="3"/>
+    <path d="M0 -50 L36 -39 L0 -24 Z" fill="url(#gold)" class="pulse"/>
+    <circle cx="0" cy="10" r="7" fill="url(#gold)"/>
+  </g>
+  <!-- two walking figures -->
+  <g transform="translate(96,250)"><circle cx="0" cy="0" r="11" fill="url(#gold)"/><path d="M-9 14 q9 -8 18 0 l0 24 -6 0 -1 -16 -4 0 -1 16 -6 0 z" fill="#dbe6ff"/></g>
+  <g transform="translate(134,256)"><circle cx="0" cy="0" r="10" fill="url(#cy)"/><path d="M-8 12 q8 -7 16 0 l0 22 -5 0 -1 -14 -3 0 -1 14 -6 0 z" fill="#9fb4e0"/></g>
+</svg>

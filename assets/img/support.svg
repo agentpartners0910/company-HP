@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="IT運用・保守サポートのイメージ">
+  <defs>
+    <radialGradient id="spot" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#2a447f"/><stop offset="52%" stop-color="#16234c"/><stop offset="100%" stop-color="#091029"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset="1" stop-color="#bb8a30"/></linearGradient>
+    <linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ceee6"/><stop offset="1" stop-color="#4aa6d8"/></linearGradient>
+    <radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#eccd7c" stop-opacity=".5"/><stop offset="100%" stop-color="#eccd7c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="ac" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#56c7d6" stop-opacity=".5"/><stop offset="100%" stop-color="#56c7d6" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#7e93c8" stroke-opacity=".09"/></pattern>
+    <style>@keyframes p{0%,100%{opacity:.5}50%{opacity:1}}@keyframes dash{to{stroke-dashoffset:-340}}.pulse{animation:p 3.2s ease-in-out infinite}.flow{stroke-dasharray:8 8;animation:dash 6s linear infinite}@media(prefers-reduced-motion:reduce){.pulse,.flow{animation:none}}</style>
+  </defs>
+  <rect width="480" height="360" fill="url(#spot)"/>
+  <circle cx="400" cy="60" r="150" fill="url(#ag)"/><circle cx="70" cy="330" r="150" fill="url(#ac)"/>
+  <rect width="480" height="360" fill="url(#grid)"/>
+  <!-- shield (glass) -->
+  <path d="M240 78 L322 108 V190 C322 238 287 270 240 288 C193 270 158 238 158 190 V108 Z" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".18"/>
+  <path d="M240 78 L322 108 V190 C322 238 287 270 240 288 C193 270 158 238 158 190 V108 Z" fill="none" stroke="url(#gold)" stroke-width="2" opacity=".5"/>
+  <!-- check -->
+  <path d="M208 186 l22 24 44 -52" fill="none" stroke="url(#gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" class="pulse"/>
+  <!-- monitoring pulse line -->
+  <path class="flow" d="M110 322 h64 l12 -28 14 44 12 -24 h132 l12 -22 12 30 h72" fill="none" stroke="url(#cy)" stroke-width="2.5" filter="url(#glow)"/>
+  <!-- small gear -->
+  <g transform="translate(316,116)" filter="url(#glow)">
+    <circle r="15" fill="#13204a" stroke="url(#gold)" stroke-width="2"/><circle r="5" fill="url(#gold)"/>
+    <g fill="url(#gold)"><rect x="-2.5" y="-21" width="5" height="7" rx="2"/><rect x="-2.5" y="14" width="5" height="7" rx="2"/><rect x="-21" y="-2.5" width="7" height="5" rx="2"/><rect x="14" y="-2.5" width="7" height="5" rx="2"/></g>
+  </g>
+</svg>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>製造業向け 生産・在庫管理システム｜提案デモ｜株式会社エージェントパートナーズ</title>
+  <meta name="description" content="製造業向けの生産・在庫管理システムの提案デモ画面（サンプル）。生産進捗・稼働率・在庫アラートをひと目で把握し、AIが需要予測と発注提案を行います。" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="../assets/favicon_32.png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/demo.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-top">
+      <div class="app-top__left">
+        <span class="app-logo">AGENT<b>PARTNERS</b></span>
+        <span class="demo-badge">DEMO</span>
+        <span class="app-sys">製造業向け｜生産・在庫管理システム</span>
+      </div>
+      <div class="app-top__right">
+        <span class="app-user">サンプル製作所 / 工場長</span>
+        <a href="../cases.html" class="app-back">← 開発事例へ戻る</a>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <aside class="app-side">
+        <p class="side-cap">MENU</p>
+        <nav class="side-nav">
+          <button type="button" class="side-link is-active" data-screen="screen-dashboard" aria-current="page"><span class="ico"></span>ダッシュボード</button>
+          <button type="button" class="side-link" data-screen="screen-production"><span class="ico"></span>生産指示</button>
+          <button type="button" class="side-link" data-screen="screen-inventory"><span class="ico"></span>在庫管理</button>
+          <button type="button" class="side-link" data-screen="screen-equipment"><span class="ico"></span>設備・稼働</button>
+          <button type="button" class="side-link" data-screen="screen-quality"><span class="ico"></span>品質記録</button>
+          <button type="button" class="side-link" data-screen="screen-purchase"><span class="ico"></span>発注・仕入</button>
+          <button type="button" class="side-link" data-screen="screen-report"><span class="ico"></span>レポート</button>
+        </nav>
+        <div class="side-foot">これは提案用のデモ画面です。メニューを押すと画面が切り替わります。</div>
+      </aside>
+
+      <main class="app-main">
+        <div class="demo-note">本画面は提案用のデモです。表示している数値・データはすべてサンプルです。</div>
+
+        <!-- Dashboard -->
+        <section class="screen" id="screen-dashboard">
+          <div class="app-headline"><h1>生産ダッシュボード</h1><p>2026/06/27 時点｜第2工場</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">本日の生産数</p><p class="kpi__val">1,284<small>個</small></p><span class="kpi__trend trend-up">▲ 計画比 +6.2%</span></div>
+            <div class="kpi"><p class="kpi__label">設備稼働率</p><p class="kpi__val">87.4<small>%</small></p><span class="kpi__trend trend-up">▲ 前日比 +2.1pt</span></div>
+            <div class="kpi kpi--alert"><p class="kpi__label">在庫アラート</p><p class="kpi__val">3<small>品目</small></p><span class="kpi__trend trend-flat">要発注 / 下限割れ</span></div>
+            <div class="kpi"><p class="kpi__label">不良率</p><p class="kpi__val">0.8<small>%</small></p><span class="kpi__trend trend-down">▼ 前週比 -0.3pt</span></div>
+          </section>
+          <div class="grid2">
+            <section class="panel">
+              <div class="panel__head"><h2 class="panel__title">ライン別 生産数（本日）</h2><span class="panel__sub">単位：個</span></div>
+              <div class="chart">
+                <div class="chart__col"><div class="chart__bar" style="height:62%"><span>320</span></div><span class="chart__x">Aライン</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:84%"><span>432</span></div><span class="chart__x">Bライン</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:48%"><span>248</span></div><span class="chart__x">Cライン</span></div>
+                <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:55%"><span>284</span></div><span class="chart__x">Dライン</span></div>
+              </div>
+            </section>
+            <section class="panel ai-panel">
+              <div class="panel__head"><h2 class="panel__title">AIアシスタント</h2></div>
+              <div class="ai-item"><p class="ai-item__tag">需要予測</p><p class="ai-item__body">過去実績と受注傾向から、<b>製品「SP-200」は来週 +18% の需要増</b>が見込まれます。早めの増産計画をおすすめします。</p></div>
+              <div class="ai-item"><p class="ai-item__tag">自動発注提案</p><p class="ai-item__body">部材「ベアリング6203」が下限を割り込みました。<b>本日中に 500個 の発注</b>を提案します。</p><div class="ai-actions"><button class="ai-btn ai-btn--gold">発注書を作成</button><button class="ai-btn ai-btn--ghost">あとで</button></div></div>
+            </section>
+          </div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">製造指示 一覧</h2><span class="chip">本日 8件</span></div>
+            <table class="dtable">
+              <thead><tr><th>指示No.</th><th>品番 / 製品</th><th class="num">数量</th><th>進捗</th><th>納期</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">MO-2041</td><td>SP-200 / 精密シャフト</td><td class="num">500</td><td>92%</td><td>06/28</td><td><span class="pill pill--run">製造中</span></td></tr>
+                <tr><td class="strong">MO-2042</td><td>GR-15 / ギアユニット</td><td class="num">240</td><td>100%</td><td>06/27</td><td><span class="pill pill--ok">完了</span></td></tr>
+                <tr><td class="strong">MO-2043</td><td>CV-88 / カバー成形</td><td class="num">1,000</td><td>34%</td><td>06/30</td><td><span class="pill pill--run">製造中</span></td></tr>
+                <tr><td class="strong">MO-2044</td><td>BK-02 / ブラケット</td><td class="num">320</td><td>0%</td><td>07/01</td><td><span class="pill pill--idle">未着手</span></td></tr>
+                <tr><td class="strong">MO-2045</td><td>SP-200 / 精密シャフト</td><td class="num">300</td><td>0%</td><td>07/02</td><td><span class="pill pill--warn">部材待ち</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 生産指示 -->
+        <section class="screen" id="screen-production" hidden>
+          <div class="app-headline"><h1>生産指示</h1><p>進行中・予定の指示書を管理</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">製造指示 一覧</h2><span class="chip">全 12件</span></div>
+            <table class="dtable">
+              <thead><tr><th>指示No.</th><th>品番 / 製品</th><th class="num">数量</th><th>開始</th><th>納期</th><th>担当</th><th>進捗</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">MO-2041</td><td>SP-200 / 精密シャフト</td><td class="num">500</td><td>06/25</td><td>06/28</td><td>Aライン</td><td>92%</td><td><span class="pill pill--run">製造中</span></td></tr>
+                <tr><td class="strong">MO-2043</td><td>CV-88 / カバー成形</td><td class="num">1,000</td><td>06/26</td><td>06/30</td><td>Cライン</td><td>34%</td><td><span class="pill pill--run">製造中</span></td></tr>
+                <tr><td class="strong">MO-2044</td><td>BK-02 / ブラケット</td><td class="num">320</td><td>07/01</td><td>07/01</td><td>Bライン</td><td>0%</td><td><span class="pill pill--idle">未着手</span></td></tr>
+                <tr><td class="strong">MO-2045</td><td>SP-200 / 精密シャフト</td><td class="num">300</td><td>07/02</td><td>07/02</td><td>Aライン</td><td>0%</td><td><span class="pill pill--warn">部材待ち</span></td></tr>
+                <tr><td class="strong">MO-2046</td><td>GR-15 / ギアユニット</td><td class="num">180</td><td>07/03</td><td>07/05</td><td>Dライン</td><td>0%</td><td><span class="pill pill--idle">未着手</span></td></tr>
+                <tr><td class="strong">MO-2042</td><td>GR-15 / ギアユニット</td><td class="num">240</td><td>06/24</td><td>06/27</td><td>Dライン</td><td>100%</td><td><span class="pill pill--ok">完了</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 在庫管理 -->
+        <section class="screen" id="screen-inventory" hidden>
+          <div class="app-headline"><h1>在庫管理</h1><p>部材・製品の在庫状況</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">管理品目</p><p class="kpi__val">418<small>件</small></p><span class="kpi__trend trend-flat">部材・製品</span></div>
+            <div class="kpi kpi--alert"><p class="kpi__label">下限割れ</p><p class="kpi__val">3<small>件</small></p><span class="kpi__trend trend-flat">要発注</span></div>
+            <div class="kpi"><p class="kpi__label">過剰在庫</p><p class="kpi__val">7<small>件</small></p><span class="kpi__trend trend-down">▼ 圧縮余地あり</span></div>
+            <div class="kpi"><p class="kpi__label">在庫金額</p><p class="kpi__val">¥18.4M</p><span class="kpi__trend trend-flat">前月比 -2.1%</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">在庫一覧</h2><span class="chip">下限割れを優先表示</span></div>
+            <table class="dtable">
+              <thead><tr><th>品番</th><th>品名</th><th class="num">在庫数</th><th class="num">下限</th><th>状態</th><th>更新</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">PT-6203</td><td>ベアリング 6203</td><td class="num">120</td><td class="num">300</td><td><span class="pill pill--bad">下限割れ</span></td><td>06/27</td></tr>
+                <tr><td class="strong">PT-1102</td><td>樹脂ペレット A</td><td class="num">45</td><td class="num">60</td><td><span class="pill pill--warn">残少</span></td><td>06/27</td></tr>
+                <tr><td class="strong">PT-3380</td><td>ステンレス板 t1.2</td><td class="num">820</td><td class="num">400</td><td><span class="pill pill--ok">適正</span></td><td>06/26</td></tr>
+                <tr><td class="strong">PT-7720</td><td>ボルト M6×20</td><td class="num">9,800</td><td class="num">2,000</td><td><span class="pill pill--idle">過剰</span></td><td>06/26</td></tr>
+                <tr><td class="strong">PT-4410</td><td>潤滑油 #32</td><td class="num">38</td><td class="num">40</td><td><span class="pill pill--warn">残少</span></td><td>06/25</td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 設備・稼働 -->
+        <section class="screen" id="screen-equipment" hidden>
+          <div class="app-headline"><h1>設備・稼働</h1><p>設備ごとの稼働率と保全予定</p></div>
+          <div class="grid2">
+            <section class="panel">
+              <div class="panel__head"><h2 class="panel__title">設備別 稼働率（本日）</h2></div>
+              <div class="plist">
+                <div class="prow"><span class="prow__name">Aライン</span><div class="prow__track"><div class="prow__fill" style="width:91%"></div></div><span class="prow__pct">91%</span></div>
+                <div class="prow"><span class="prow__name">Bライン</span><div class="prow__track"><div class="prow__fill" style="width:88%"></div></div><span class="prow__pct">88%</span></div>
+                <div class="prow"><span class="prow__name">Cライン</span><div class="prow__track"><div class="prow__fill" style="width:62%"></div></div><span class="prow__pct">62%</span></div>
+                <div class="prow"><span class="prow__name">Dライン</span><div class="prow__track"><div class="prow__fill" style="width:74%"></div></div><span class="prow__pct">74%</span></div>
+              </div>
+            </section>
+            <section class="panel ai-panel">
+              <div class="panel__head"><h2 class="panel__title">AIアシスタント</h2></div>
+              <div class="ai-item"><p class="ai-item__tag">予兆保全</p><p class="ai-item__body">Cラインの稼働率低下と振動データから、<b>近日中に点検が必要</b>な可能性。早めの保全を提案します。</p></div>
+            </section>
+          </div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">保全スケジュール</h2></div>
+            <table class="dtable">
+              <thead><tr><th>設備</th><th>種別</th><th>前回点検</th><th>次回予定</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">Aライン</td><td>定期点検</td><td>06/01</td><td>07/01</td><td><span class="pill pill--ok">正常</span></td></tr>
+                <tr><td class="strong">Cライン</td><td>予兆保全</td><td>05/20</td><td>06/29</td><td><span class="pill pill--warn">要対応</span></td></tr>
+                <tr><td class="strong">Dライン</td><td>定期点検</td><td>06/10</td><td>07/10</td><td><span class="pill pill--ok">正常</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 品質記録 -->
+        <section class="screen" id="screen-quality" hidden>
+          <div class="app-headline"><h1>品質記録</h1><p>検査結果・不良の記録</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">本日の検査</p><p class="kpi__val">142<small>件</small></p><span class="kpi__trend trend-flat">合格 141</span></div>
+            <div class="kpi"><p class="kpi__label">不良率</p><p class="kpi__val">0.8<small>%</small></p><span class="kpi__trend trend-down">▼ -0.3pt</span></div>
+            <div class="kpi"><p class="kpi__label">手直し</p><p class="kpi__val">2<small>件</small></p><span class="kpi__trend trend-flat">対応中</span></div>
+            <div class="kpi"><p class="kpi__label">クレーム</p><p class="kpi__val">0<small>件</small></p><span class="kpi__trend trend-up">▲ 継続ゼロ</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">検査記録</h2><span class="chip">本日分</span></div>
+            <table class="dtable">
+              <thead><tr><th>日時</th><th>品番</th><th>ロット</th><th>検査項目</th><th>判定</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">10:42</td><td>SP-200</td><td>L-0627A</td><td>寸法・外観</td><td><span class="pill pill--ok">合格</span></td></tr>
+                <tr><td class="strong">10:15</td><td>CV-88</td><td>L-0627B</td><td>外観</td><td><span class="pill pill--bad">不良</span></td></tr>
+                <tr><td class="strong">09:50</td><td>GR-15</td><td>L-0627C</td><td>寸法</td><td><span class="pill pill--ok">合格</span></td></tr>
+                <tr><td class="strong">09:20</td><td>BK-02</td><td>L-0627D</td><td>強度</td><td><span class="pill pill--ok">合格</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 発注・仕入 -->
+        <section class="screen" id="screen-purchase" hidden>
+          <div class="app-headline"><h1>発注・仕入</h1><p>部材の発注と入荷を管理</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">発注一覧</h2><span class="chip">AI提案 1件</span></div>
+            <table class="dtable">
+              <thead><tr><th>発注No.</th><th>仕入先</th><th>部材</th><th class="num">数量</th><th>納期</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">PO-0881</td><td>サンプル商事</td><td>ベアリング 6203</td><td class="num">500</td><td>06/30</td><td><span class="pill pill--warn">AI提案・未確定</span></td></tr>
+                <tr><td class="strong">PO-0880</td><td>テスト鋼材</td><td>ステンレス板 t1.2</td><td class="num">300</td><td>07/02</td><td><span class="pill pill--run">発注済</span></td></tr>
+                <tr><td class="strong">PO-0879</td><td>モデル化成</td><td>樹脂ペレット A</td><td class="num">200</td><td>06/29</td><td><span class="pill pill--run">発注済</span></td></tr>
+                <tr><td class="strong">PO-0878</td><td>サンプル商事</td><td>潤滑油 #32</td><td class="num">60</td><td>06/27</td><td><span class="pill pill--ok">入荷済</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- レポート -->
+        <section class="screen" id="screen-report" hidden>
+          <div class="app-headline"><h1>レポート</h1><p>月次サマリー（6月）</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">今月の生産数</p><p class="kpi__val">28,640<small>個</small></p><span class="kpi__trend trend-up">▲ 前月比 +4.8%</span></div>
+            <div class="kpi"><p class="kpi__label">平均稼働率</p><p class="kpi__val">85.1<small>%</small></p><span class="kpi__trend trend-up">▲ +1.6pt</span></div>
+            <div class="kpi"><p class="kpi__label">平均不良率</p><p class="kpi__val">0.9<small>%</small></p><span class="kpi__trend trend-down">▼ -0.2pt</span></div>
+            <div class="kpi"><p class="kpi__label">納期遵守率</p><p class="kpi__val">98.2<small>%</small></p><span class="kpi__trend trend-up">▲ +0.7pt</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">月別 生産数推移</h2><span class="panel__sub">単位：千個</span></div>
+            <div class="chart">
+              <div class="chart__col"><div class="chart__bar" style="height:70%"><span>25.1</span></div><span class="chart__x">2月</span></div>
+              <div class="chart__col"><div class="chart__bar" style="height:78%"><span>27.0</span></div><span class="chart__x">3月</span></div>
+              <div class="chart__col"><div class="chart__bar" style="height:66%"><span>24.2</span></div><span class="chart__x">4月</span></div>
+              <div class="chart__col"><div class="chart__bar" style="height:74%"><span>27.3</span></div><span class="chart__x">5月</span></div>
+              <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:82%"><span>28.6</span></div><span class="chart__x">6月</span></div>
+            </div>
+          </section>
+        </section>
+
+        <div class="demo-cta">
+          <p class="demo-cta__t">この仕組みを、貴社の現場に。<span>工程・帳票・既存システム連携に合わせて、ぴったりの形に設計します。</span></p>
+          <div class="demo-cta__btns">
+            <a href="../contact.html" class="b-gold">無料で相談する →</a>
+            <a href="../cases.html" class="b-line">他の開発事例を見る</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/demo.js"></script>
+</body>
+</html>

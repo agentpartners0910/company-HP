@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>士業向け 顧客・案件管理＆書類AI｜提案デモ｜株式会社エージェントパートナーズ</title>
+  <meta name="description" content="会計事務所・士業向けの顧客・案件管理システムの提案デモ画面（サンプル）。顧問先ごとの締切とタスクを一元管理し、AIが定型書類のドラフトを自動作成します。" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="../assets/favicon_32.png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/demo.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-top">
+      <div class="app-top__left">
+        <span class="app-logo">AGENT<b>PARTNERS</b></span>
+        <span class="demo-badge">DEMO</span>
+        <span class="app-sys">士業向け｜顧客・案件管理＆書類AI</span>
+      </div>
+      <div class="app-top__right">
+        <span class="app-user">サンプル会計事務所 / 所員</span>
+        <a href="../cases.html" class="app-back">← 開発事例へ戻る</a>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <aside class="app-side">
+        <p class="side-cap">MENU</p>
+        <nav class="side-nav">
+          <button type="button" class="side-link is-active" data-screen="screen-dashboard" aria-current="page"><span class="ico"></span>ダッシュボード</button>
+          <button type="button" class="side-link" data-screen="screen-clients"><span class="ico"></span>顧問先管理</button>
+          <button type="button" class="side-link" data-screen="screen-tasks"><span class="ico"></span>案件・タスク</button>
+          <button type="button" class="side-link" data-screen="screen-docai"><span class="ico"></span>書類AI作成</button>
+          <button type="button" class="side-link" data-screen="screen-schedule"><span class="ico"></span>スケジュール</button>
+          <button type="button" class="side-link" data-screen="screen-billing"><span class="ico"></span>請求・報酬</button>
+          <button type="button" class="side-link" data-screen="screen-files"><span class="ico"></span>資料・保管</button>
+        </nav>
+        <div class="side-foot">これは提案用のデモ画面です。メニューを押すと画面が切り替わります。</div>
+      </aside>
+
+      <main class="app-main">
+        <div class="demo-note">本画面は提案用のデモです。表示している数値・データはすべてサンプルです。</div>
+
+        <!-- Dashboard -->
+        <section class="screen" id="screen-dashboard">
+          <div class="app-headline"><h1>ダッシュボード</h1><p>2026/06/27 時点</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">顧問先</p><p class="kpi__val">132<small>社</small></p><span class="kpi__trend trend-up">▲ 今月 +3社</span></div>
+            <div class="kpi kpi--alert"><p class="kpi__label">今月の締切</p><p class="kpi__val">18<small>件</small></p><span class="kpi__trend trend-flat">うち今週 7件</span></div>
+            <div class="kpi"><p class="kpi__label">未着手タスク</p><p class="kpi__val">9<small>件</small></p><span class="kpi__trend trend-down">▼ 前週比 -5件</span></div>
+            <div class="kpi"><p class="kpi__label">AI作成 書類</p><p class="kpi__val">46<small>件</small></p><span class="kpi__trend trend-up">▲ 今月 / 約32h削減</span></div>
+          </section>
+          <div class="grid2">
+            <section class="panel">
+              <div class="panel__head"><h2 class="panel__title">月別 タスク消化件数</h2><span class="panel__sub">件</span></div>
+              <div class="chart">
+                <div class="chart__col"><div class="chart__bar" style="height:55%"><span>62</span></div><span class="chart__x">2月</span></div>
+                <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:92%"><span>104</span></div><span class="chart__x">3月</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:48%"><span>54</span></div><span class="chart__x">4月</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:60%"><span>68</span></div><span class="chart__x">5月</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:66%"><span>74</span></div><span class="chart__x">6月</span></div>
+              </div>
+            </section>
+            <section class="panel ai-panel">
+              <div class="panel__head"><h2 class="panel__title">AIアシスタント</h2></div>
+              <div class="ai-item"><p class="ai-item__tag">書類ドラフト自動作成</p><p class="ai-item__body">顧問先「株式会社サンプル商事」の<b>月次報告書のドラフト</b>を、登録データから自動作成しました。確認・修正してご利用ください。</p><div class="ai-actions"><button class="ai-btn ai-btn--gold">ドラフトを開く</button><button class="ai-btn ai-btn--ghost">再生成</button></div></div>
+              <div class="ai-item"><p class="ai-item__tag">締切リマインド</p><p class="ai-item__body"><b>今週の締切が7件</b>あります。優先度が高い「源泉所得税納付」の対応をおすすめします。</p></div>
+            </section>
+          </div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">顧問先 対応状況</h2><span class="chip">期限が近い順</span></div>
+            <table class="dtable">
+              <thead><tr><th>顧問先</th><th>案件種別</th><th>期限</th><th>担当</th><th>進捗</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">株式会社サンプル商事</td><td>月次顧問</td><td>06/30</td><td>山本</td><td>80%</td><td><span class="pill pill--run">対応中</span></td></tr>
+                <tr><td class="strong">合同会社テスト工業</td><td>源泉納付</td><td>06/28</td><td>井上</td><td>40%</td><td><span class="pill pill--warn">急ぎ</span></td></tr>
+                <tr><td class="strong">サンプル物産株式会社</td><td>決算・申告</td><td>07/31</td><td>山本</td><td>15%</td><td><span class="pill pill--idle">未着手</span></td></tr>
+                <tr><td class="strong">個人事業 田中商店</td><td>記帳代行</td><td>07/10</td><td>渡辺</td><td>100%</td><td><span class="pill pill--ok">完了</span></td></tr>
+                <tr><td class="strong">株式会社モデル建設</td><td>給与計算</td><td>06/29</td><td>井上</td><td>60%</td><td><span class="pill pill--run">対応中</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 顧問先管理 -->
+        <section class="screen" id="screen-clients" hidden>
+          <div class="app-headline"><h1>顧問先管理</h1><p>顧問先の基本情報と契約</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">顧問先一覧</h2><span class="chip">132社</span></div>
+            <table class="dtable">
+              <thead><tr><th>顧問先</th><th>業種</th><th>契約</th><th>担当</th><th>決算月</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">株式会社サンプル商事</td><td>卸売</td><td>月次顧問</td><td>山本</td><td>3月</td><td><span class="pill pill--ok">継続</span></td></tr>
+                <tr><td class="strong">合同会社テスト工業</td><td>製造</td><td>月次顧問</td><td>井上</td><td>9月</td><td><span class="pill pill--ok">継続</span></td></tr>
+                <tr><td class="strong">サンプル物産株式会社</td><td>商社</td><td>決算のみ</td><td>山本</td><td>6月</td><td><span class="pill pill--run">繁忙</span></td></tr>
+                <tr><td class="strong">個人事業 田中商店</td><td>小売</td><td>記帳代行</td><td>渡辺</td><td>12月</td><td><span class="pill pill--ok">継続</span></td></tr>
+                <tr><td class="strong">株式会社モデル建設</td><td>建設</td><td>月次＋給与</td><td>井上</td><td>3月</td><td><span class="pill pill--ok">継続</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 案件・タスク -->
+        <section class="screen" id="screen-tasks" hidden>
+          <div class="app-headline"><h1>案件・タスク</h1><p>担当者別のタスク</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">タスク一覧</h2><span class="chip">未完 23件</span></div>
+            <table class="dtable">
+              <thead><tr><th>タスク</th><th>顧問先</th><th>期限</th><th>担当</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">源泉所得税 納付</td><td>合同会社テスト工業</td><td>06/28</td><td>井上</td><td><span class="pill pill--warn">急ぎ</span></td></tr>
+                <tr><td class="strong">月次試算表 作成</td><td>株式会社サンプル商事</td><td>06/30</td><td>山本</td><td><span class="pill pill--run">対応中</span></td></tr>
+                <tr><td class="strong">給与計算</td><td>株式会社モデル建設</td><td>06/29</td><td>井上</td><td><span class="pill pill--run">対応中</span></td></tr>
+                <tr><td class="strong">決算準備 資料依頼</td><td>サンプル物産株式会社</td><td>07/05</td><td>山本</td><td><span class="pill pill--idle">未着手</span></td></tr>
+                <tr><td class="strong">記帳 6月分</td><td>個人事業 田中商店</td><td>07/10</td><td>渡辺</td><td><span class="pill pill--ok">完了</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 書類AI作成 -->
+        <section class="screen" id="screen-docai" hidden>
+          <div class="app-headline"><h1>書類AI作成</h1><p>登録データから定型書類を自動作成</p></div>
+          <div class="grid2">
+            <section class="panel ai-panel">
+              <div class="panel__head"><h2 class="panel__title">AIドラフト作成</h2></div>
+              <div class="ai-item"><p class="ai-item__tag">作成対象</p><p class="ai-item__body">顧問先：<b>株式会社サンプル商事</b><br />書類：<b>月次報告書（2026年5月分）</b></p></div>
+              <div class="ai-item"><p class="ai-item__tag">生成結果</p><p class="ai-item__body">売上・経費データから、コメント付きの報告書ドラフトを作成しました。確認のうえ、必要に応じて修正してください。</p><div class="ai-actions"><button class="ai-btn ai-btn--gold">ドラフトを開く</button><button class="ai-btn ai-btn--ghost">再生成</button></div></div>
+            </section>
+            <section class="panel">
+              <div class="panel__head"><h2 class="panel__title">最近のAI作成書類</h2></div>
+              <table class="dtable">
+                <thead><tr><th>書類</th><th>顧問先</th><th>状態</th></tr></thead>
+                <tbody>
+                  <tr><td class="strong">月次報告書</td><td>サンプル商事</td><td><span class="pill pill--warn">確認待ち</span></td></tr>
+                  <tr><td class="strong">納付書 案内</td><td>テスト工業</td><td><span class="pill pill--ok">確定</span></td></tr>
+                  <tr><td class="strong">給与明細 一括</td><td>モデル建設</td><td><span class="pill pill--ok">確定</span></td></tr>
+                  <tr><td class="strong">決算 説明資料</td><td>サンプル物産</td><td><span class="pill pill--idle">下書き</span></td></tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </section>
+
+        <!-- スケジュール -->
+        <section class="screen" id="screen-schedule" hidden>
+          <div class="app-headline"><h1>スケジュール</h1><p>今週の予定と締切</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">今週の予定</h2><span class="chip">締切 7件</span></div>
+            <table class="dtable">
+              <thead><tr><th>日付</th><th>予定</th><th>顧問先</th><th>担当</th><th>区分</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">06/28(日)</td><td>源泉所得税 納付期限</td><td>テスト工業</td><td>井上</td><td><span class="pill pill--warn">締切</span></td></tr>
+                <tr><td class="strong">06/29(月)</td><td>給与計算 提出</td><td>モデル建設</td><td>井上</td><td><span class="pill pill--warn">締切</span></td></tr>
+                <tr><td class="strong">06/30(火)</td><td>月次訪問</td><td>サンプル商事</td><td>山本</td><td><span class="pill pill--run">訪問</span></td></tr>
+                <tr><td class="strong">07/02(木)</td><td>決算打合せ</td><td>サンプル物産</td><td>山本</td><td><span class="pill pill--run">面談</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 請求・報酬 -->
+        <section class="screen" id="screen-billing" hidden>
+          <div class="app-headline"><h1>請求・報酬</h1><p>顧問報酬の請求と入金</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">今月請求</p><p class="kpi__val">¥4.82M</p><span class="kpi__trend trend-flat">128件</span></div>
+            <div class="kpi"><p class="kpi__label">入金済</p><p class="kpi__val">¥4.10M</p><span class="kpi__trend trend-up">▲ 110件</span></div>
+            <div class="kpi kpi--alert"><p class="kpi__label">入金待ち</p><p class="kpi__val">18<small>件</small></p><span class="kpi__trend trend-flat">確認中</span></div>
+            <div class="kpi"><p class="kpi__label">期日超過</p><p class="kpi__val">2<small>件</small></p><span class="kpi__trend trend-down">▼ 要連絡</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">請求一覧（抜粋）</h2></div>
+            <table class="dtable">
+              <thead><tr><th>顧問先</th><th>区分</th><th class="num">金額</th><th>期日</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">サンプル商事</td><td>月次顧問</td><td class="num">¥55,000</td><td>06/30</td><td><span class="pill pill--run">請求済</span></td></tr>
+                <tr><td class="strong">モデル建設</td><td>月次＋給与</td><td class="num">¥66,000</td><td>06/30</td><td><span class="pill pill--ok">入金済</span></td></tr>
+                <tr><td class="strong">テスト工業</td><td>月次顧問</td><td class="num">¥44,000</td><td>06/20</td><td><span class="pill pill--bad">超過</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 資料・保管 -->
+        <section class="screen" id="screen-files" hidden>
+          <div class="app-headline"><h1>資料・保管</h1><p>顧問先ごとの資料を一元保管</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">最近の資料</h2><span class="chip">電子帳簿対応</span></div>
+            <table class="dtable">
+              <thead><tr><th>ファイル名</th><th>顧問先</th><th>種別</th><th>更新</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">2026-05_試算表.pdf</td><td>サンプル商事</td><td>試算表</td><td>06/26</td><td><span class="pill pill--ok">保管済</span></td></tr>
+                <tr><td class="strong">領収書_6月.zip</td><td>田中商店</td><td>証憑</td><td>06/25</td><td><span class="pill pill--run">確認中</span></td></tr>
+                <tr><td class="strong">決算資料一式.xlsx</td><td>サンプル物産</td><td>決算</td><td>06/24</td><td><span class="pill pill--idle">作成中</span></td></tr>
+                <tr><td class="strong">給与データ_6月.csv</td><td>モデル建設</td><td>給与</td><td>06/27</td><td><span class="pill pill--ok">保管済</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <div class="demo-cta">
+          <p class="demo-cta__t">締切とノウハウを、属人化させない。<span>顧問先・タスク・書類作成を一元化し、AIで定型業務の時間を取り戻します。</span></p>
+          <div class="demo-cta__btns">
+            <a href="../contact.html" class="b-gold">無料で相談する →</a>
+            <a href="../cases.html" class="b-line">他の開発事例を見る</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/demo.js"></script>
+</body>
+</html>

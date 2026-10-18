@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="経営コンサルティング企業との協業（戦略と実装）のイメージ">
+  <defs>
+    <radialGradient id="spot" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#2a447f"/><stop offset="52%" stop-color="#16234c"/><stop offset="100%" stop-color="#091029"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset="1" stop-color="#bb8a30"/></linearGradient>
+    <linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ceee6"/><stop offset="1" stop-color="#4aa6d8"/></linearGradient>
+    <radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#eccd7c" stop-opacity=".5"/><stop offset="100%" stop-color="#eccd7c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="ac" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#56c7d6" stop-opacity=".5"/><stop offset="100%" stop-color="#56c7d6" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#7e93c8" stroke-opacity=".09"/></pattern>
+    <style>@keyframes p{0%,100%{opacity:.45}50%{opacity:1}}@keyframes f{0%,100%{transform:rotate(0)}100%{transform:rotate(360deg)}}.pulse{animation:p 2.8s ease-in-out infinite}.spin{transform-origin:330px 168px;animation:f 18s linear infinite}@media(prefers-reduced-motion:reduce){.pulse,.spin{animation:none}}</style>
+  </defs>
+  <rect width="480" height="360" fill="url(#spot)"/>
+  <circle cx="400" cy="60" r="150" fill="url(#ag)"/><circle cx="64" cy="330" r="150" fill="url(#ac)"/>
+  <rect width="480" height="360" fill="url(#grid)"/>
+  <!-- strategy: lightbulb (glass) -->
+  <g transform="translate(150,168)">
+    <circle r="48" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".18"/>
+    <g filter="url(#glow)">
+      <path d="M0 -26 a26 26 0 0 1 16 46 l0 12 -32 0 0 -12 a26 26 0 0 1 16 -46 z" fill="none" stroke="url(#gold)" stroke-width="3" class="pulse"/>
+      <rect x="-10" y="34" width="20" height="8" rx="3" fill="url(#gold)"/>
+    </g>
+    <g stroke="url(#gold)" stroke-width="2.5" stroke-linecap="round" opacity=".7"><path d="M0 -60 0 -52M-42 -32 -34 -28M42 -32 34 -28"/></g>
+  </g>
+  <!-- bridge -->
+  <path d="M212 168 h56" stroke="url(#cy)" stroke-width="3" stroke-dasharray="3 10" fill="none" filter="url(#glow)"/>
+  <path d="M268 168 l-13 -8 0 16 z" fill="url(#cy)"/>
+  <!-- implementation: gear (glass) -->
+  <g transform="translate(330,168)">
+    <circle r="48" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".18"/>
+  </g>
+  <g class="spin" filter="url(#glow)"><g transform="translate(330,168)">
+    <circle r="13" fill="none" stroke="url(#gold)" stroke-width="3"/>
+    <g stroke="url(#gold)" stroke-width="3" stroke-linecap="round"><path d="M0 -34 0 -22M0 22 0 34M-34 0 -22 0M22 0 34 0M-24 -24 -16 -16M16 16 24 24M24 -24 16 -16M-16 16 -24 24"/></g>
+  </g></g>
+  <!-- interlocking rings -->
+  <g fill="none" stroke-width="4" filter="url(#glow)"><circle cx="226" cy="298" r="22" stroke="url(#gold)"/><circle cx="254" cy="298" r="22" stroke="url(#cy)"/></g>
+</svg>

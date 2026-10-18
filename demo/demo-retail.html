@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小売・飲食向け 売上分析＆AI需要予測｜提案デモ｜株式会社エージェントパートナーズ</title>
+  <meta name="description" content="小売・飲食店向けの売上分析・AI需要予測システムの提案デモ画面（サンプル）。売上・客数・客単価を可視化し、AIが翌日の来客予測と発注・シフトの提案を行います。" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="../assets/favicon_32.png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/demo.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-top">
+      <div class="app-top__left">
+        <span class="app-logo">AGENT<b>PARTNERS</b></span>
+        <span class="demo-badge">DEMO</span>
+        <span class="app-sys">小売・飲食向け｜売上分析＆AI需要予測</span>
+      </div>
+      <div class="app-top__right">
+        <span class="app-user">サンプルカフェ 本店 / 店長</span>
+        <a href="../cases.html" class="app-back">← 開発事例へ戻る</a>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <aside class="app-side">
+        <p class="side-cap">MENU</p>
+        <nav class="side-nav">
+          <button type="button" class="side-link is-active" data-screen="screen-dashboard" aria-current="page"><span class="ico"></span>売上ダッシュボード</button>
+          <button type="button" class="side-link" data-screen="screen-product"><span class="ico"></span>商品分析</button>
+          <button type="button" class="side-link" data-screen="screen-forecast"><span class="ico"></span>需要予測</button>
+          <button type="button" class="side-link" data-screen="screen-stock"><span class="ico"></span>在庫・発注</button>
+          <button type="button" class="side-link" data-screen="screen-shift"><span class="ico"></span>シフト管理</button>
+          <button type="button" class="side-link" data-screen="screen-stores"><span class="ico"></span>店舗比較</button>
+          <button type="button" class="side-link" data-screen="screen-report"><span class="ico"></span>レポート</button>
+        </nav>
+        <div class="side-foot">これは提案用のデモ画面です。メニューを押すと画面が切り替わります。</div>
+      </aside>
+
+      <main class="app-main">
+        <div class="demo-note">本画面は提案用のデモです。表示している数値・データはすべてサンプルです。</div>
+
+        <!-- Dashboard -->
+        <section class="screen" id="screen-dashboard">
+          <div class="app-headline"><h1>売上ダッシュボード</h1><p>2026/06/27｜本店</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">本日売上</p><p class="kpi__val">¥312,800</p><span class="kpi__trend trend-up">▲ 前年同日 +9.4%</span></div>
+            <div class="kpi"><p class="kpi__label">客数</p><p class="kpi__val">248<small>人</small></p><span class="kpi__trend trend-up">▲ 前週比 +12人</span></div>
+            <div class="kpi"><p class="kpi__label">客単価</p><p class="kpi__val">¥1,261</p><span class="kpi__trend trend-flat">前週比 ±0%</span></div>
+            <div class="kpi"><p class="kpi__label">フードロス率</p><p class="kpi__val">2.1<small>%</small></p><span class="kpi__trend trend-down">▼ 前月比 -1.4pt</span></div>
+          </section>
+          <div class="grid2">
+            <section class="panel">
+              <div class="panel__head"><h2 class="panel__title">時間帯別 売上（本日）</h2><span class="panel__sub">単位：千円</span></div>
+              <div class="chart">
+                <div class="chart__col"><div class="chart__bar" style="height:30%"><span>28</span></div><span class="chart__x">9-11</span></div>
+                <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:88%"><span>82</span></div><span class="chart__x">11-13</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:42%"><span>39</span></div><span class="chart__x">13-15</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:50%"><span>46</span></div><span class="chart__x">15-17</span></div>
+                <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:78%"><span>73</span></div><span class="chart__x">17-19</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:48%"><span>45</span></div><span class="chart__x">19-21</span></div>
+              </div>
+            </section>
+            <section class="panel ai-panel">
+              <div class="panel__head"><h2 class="panel__title">AIアシスタント</h2></div>
+              <div class="ai-item"><p class="ai-item__tag">来客予測（明日）</p><p class="ai-item__body">天候（晴・最高28℃）と曜日傾向から、明日の来客は<b>約 270人（+9%）</b>と予測。ピークは <b>12時台</b>の見込みです。</p></div>
+              <div class="ai-item"><p class="ai-item__tag">発注・仕込み提案</p><p class="ai-item__body">予測に基づき、<b>ランチ食材を +1.1倍</b>で仕込み、人気の「日替わりプレート」を <b>+15食</b> ご準備ください。</p><div class="ai-actions"><button class="ai-btn ai-btn--gold">発注リストへ反映</button><button class="ai-btn ai-btn--ghost">調整する</button></div></div>
+            </section>
+          </div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">商品別 売上ランキング（本日）</h2><span class="chip">TOP 5</span></div>
+            <table class="dtable">
+              <thead><tr><th>順位</th><th>商品名</th><th class="num">販売数</th><th class="num">売上</th><th>在庫</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">1</td><td>日替わりプレート</td><td class="num">86</td><td class="num">¥107,500</td><td>残 4食</td><td><span class="pill pill--warn">残少</span></td></tr>
+                <tr><td class="strong">2</td><td>本日のパスタ</td><td class="num">61</td><td class="num">¥73,200</td><td>十分</td><td><span class="pill pill--ok">良好</span></td></tr>
+                <tr><td class="strong">3</td><td>自家製スイーツ</td><td class="num">54</td><td class="num">¥37,800</td><td>残 9</td><td><span class="pill pill--ok">良好</span></td></tr>
+                <tr><td class="strong">4</td><td>ブレンドコーヒー</td><td class="num">120</td><td class="num">¥54,000</td><td>十分</td><td><span class="pill pill--ok">良好</span></td></tr>
+                <tr><td class="strong">5</td><td>サンドイッチ各種</td><td class="num">33</td><td class="num">¥23,100</td><td>完売</td><td><span class="pill pill--bad">完売</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 商品分析 -->
+        <section class="screen" id="screen-product" hidden>
+          <div class="app-headline"><h1>商品分析</h1><p>商品ごとの売れ行きと粗利</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">商品別 実績（今月）</h2><span class="chip">粗利率つき</span></div>
+            <table class="dtable">
+              <thead><tr><th>商品名</th><th class="num">販売数</th><th class="num">売上</th><th class="num">粗利率</th><th>傾向</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">日替わりプレート</td><td class="num">2,140</td><td class="num">¥2,675,000</td><td class="num">62%</td><td><span class="pill pill--ok">伸び</span></td></tr>
+                <tr><td class="strong">本日のパスタ</td><td class="num">1,580</td><td class="num">¥1,896,000</td><td class="num">58%</td><td><span class="pill pill--run">横ばい</span></td></tr>
+                <tr><td class="strong">ブレンドコーヒー</td><td class="num">3,260</td><td class="num">¥1,467,000</td><td class="num">71%</td><td><span class="pill pill--ok">伸び</span></td></tr>
+                <tr><td class="strong">自家製スイーツ</td><td class="num">1,210</td><td class="num">¥847,000</td><td class="num">55%</td><td><span class="pill pill--run">横ばい</span></td></tr>
+                <tr><td class="strong">サンドイッチ各種</td><td class="num">760</td><td class="num">¥532,000</td><td class="num">49%</td><td><span class="pill pill--bad">減少</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 需要予測 -->
+        <section class="screen" id="screen-forecast" hidden>
+          <div class="app-headline"><h1>需要予測</h1><p>AIによる今後7日間の来客予測</p></div>
+          <div class="grid2">
+            <section class="panel">
+              <div class="panel__head"><h2 class="panel__title">来客予測（7日間）</h2><span class="panel__sub">単位：人</span></div>
+              <div class="chart">
+                <div class="chart__col"><div class="chart__bar" style="height:70%"><span>248</span></div><span class="chart__x">土</span></div>
+                <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:80%"><span>270</span></div><span class="chart__x">日</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:52%"><span>182</span></div><span class="chart__x">月</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:55%"><span>195</span></div><span class="chart__x">火</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:58%"><span>205</span></div><span class="chart__x">水</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:64%"><span>224</span></div><span class="chart__x">木</span></div>
+                <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:86%"><span>292</span></div><span class="chart__x">金</span></div>
+              </div>
+            </section>
+            <section class="panel ai-panel">
+              <div class="panel__head"><h2 class="panel__title">AIアシスタント</h2></div>
+              <div class="ai-item"><p class="ai-item__tag">ピーク予測</p><p class="ai-item__body">週末は<b>日・金が混雑</b>。日曜は12時台、金曜は18時台がピークの見込みです。</p></div>
+              <div class="ai-item"><p class="ai-item__tag">施策提案</p><p class="ai-item__body">来客が落ちる<b>火曜にクーポン配信</b>すると、平準化と売上底上げが期待できます。</p></div>
+            </section>
+          </div>
+        </section>
+
+        <!-- 在庫・発注 -->
+        <section class="screen" id="screen-stock" hidden>
+          <div class="app-headline"><h1>在庫・発注</h1><p>食材在庫とAI発注提案</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">食材在庫</h2><span class="chip">AI発注提案 2件</span></div>
+            <table class="dtable">
+              <thead><tr><th>食材</th><th class="num">在庫</th><th>消費ペース</th><th>AI発注提案</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">鶏むね肉</td><td class="num">3.2kg</td><td>速い</td><td>+8kg</td><td><span class="pill pill--warn">発注推奨</span></td></tr>
+                <tr><td class="strong">パスタ（乾麺）</td><td class="num">12kg</td><td>普通</td><td>—</td><td><span class="pill pill--ok">適正</span></td></tr>
+                <tr><td class="strong">レタス</td><td class="num">8玉</td><td>速い</td><td>+20玉</td><td><span class="pill pill--warn">発注推奨</span></td></tr>
+                <tr><td class="strong">コーヒー豆</td><td class="num">6.5kg</td><td>普通</td><td>—</td><td><span class="pill pill--ok">適正</span></td></tr>
+                <tr><td class="strong">生クリーム</td><td class="num">1.0L</td><td>速い</td><td>+4L</td><td><span class="pill pill--bad">残少</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- シフト管理 -->
+        <section class="screen" id="screen-shift" hidden>
+          <div class="app-headline"><h1>シフト管理</h1><p>来客予測に合わせた人員配置</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">本日のシフト</h2><span class="chip">AI最適化済</span></div>
+            <table class="dtable">
+              <thead><tr><th>時間帯</th><th class="num">予測来客</th><th class="num">配置人数</th><th>担当</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">9-11</td><td class="num">少</td><td class="num">2</td><td>佐藤・鈴木</td><td><span class="pill pill--ok">適正</span></td></tr>
+                <tr><td class="strong">11-13</td><td class="num">多</td><td class="num">5</td><td>佐藤・鈴木 他3</td><td><span class="pill pill--ok">適正</span></td></tr>
+                <tr><td class="strong">13-15</td><td class="num">中</td><td class="num">3</td><td>鈴木 他2</td><td><span class="pill pill--ok">適正</span></td></tr>
+                <tr><td class="strong">17-19</td><td class="num">多</td><td class="num">4</td><td>田中 他3</td><td><span class="pill pill--warn">+1名推奨</span></td></tr>
+                <tr><td class="strong">19-21</td><td class="num">中</td><td class="num">3</td><td>田中 他2</td><td><span class="pill pill--ok">適正</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- 店舗比較 -->
+        <section class="screen" id="screen-stores" hidden>
+          <div class="app-headline"><h1>店舗比較</h1><p>店舗ごとの売上・客数</p></div>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">店舗別 実績（本日）</h2></div>
+            <table class="dtable">
+              <thead><tr><th>店舗</th><th class="num">売上</th><th class="num">客数</th><th class="num">客単価</th><th class="num">前年比</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">本店</td><td class="num">¥312,800</td><td class="num">248</td><td class="num">¥1,261</td><td class="num">+9.4%</td><td><span class="pill pill--ok">好調</span></td></tr>
+                <tr><td class="strong">駅前店</td><td class="num">¥268,400</td><td class="num">221</td><td class="num">¥1,214</td><td class="num">+3.1%</td><td><span class="pill pill--ok">堅調</span></td></tr>
+                <tr><td class="strong">郊外店</td><td class="num">¥184,900</td><td class="num">142</td><td class="num">¥1,302</td><td class="num">-2.6%</td><td><span class="pill pill--warn">要注視</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <!-- レポート -->
+        <section class="screen" id="screen-report" hidden>
+          <div class="app-headline"><h1>レポート</h1><p>月次サマリー（6月）</p></div>
+          <section class="kpis">
+            <div class="kpi"><p class="kpi__label">今月売上</p><p class="kpi__val">¥8.42M</p><span class="kpi__trend trend-up">▲ 前年比 +7.2%</span></div>
+            <div class="kpi"><p class="kpi__label">のべ客数</p><p class="kpi__val">6,840<small>人</small></p><span class="kpi__trend trend-up">▲ +4.1%</span></div>
+            <div class="kpi"><p class="kpi__label">平均客単価</p><p class="kpi__val">¥1,231</p><span class="kpi__trend trend-up">▲ +3.0%</span></div>
+            <div class="kpi"><p class="kpi__label">フードロス率</p><p class="kpi__val">2.4<small>%</small></p><span class="kpi__trend trend-down">▼ -1.1pt</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><h2 class="panel__title">週別 売上推移</h2><span class="panel__sub">単位：万円</span></div>
+            <div class="chart">
+              <div class="chart__col"><div class="chart__bar" style="height:64%"><span>198</span></div><span class="chart__x">第1週</span></div>
+              <div class="chart__col"><div class="chart__bar" style="height:72%"><span>214</span></div><span class="chart__x">第2週</span></div>
+              <div class="chart__col"><div class="chart__bar" style="height:68%"><span>206</span></div><span class="chart__x">第3週</span></div>
+              <div class="chart__col"><div class="chart__bar chart__bar--gold" style="height:80%"><span>224</span></div><span class="chart__x">第4週</span></div>
+            </div>
+          </section>
+        </section>
+
+        <div class="demo-cta">
+          <p class="demo-cta__t">勘と経験を、データで後押し。<span>POS・予約・在庫と連携し、発注やシフトの“判断”まで伴走します。</span></p>
+          <div class="demo-cta__btns">
+            <a href="../contact.html" class="b-gold">無料で相談する →</a>
+            <a href="../cases.html" class="b-line">他の開発事例を見る</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../js/demo.js"></script>
+</body>
+</html>

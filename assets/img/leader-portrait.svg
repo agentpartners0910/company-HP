@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 480" role="img" aria-label="代表メッセージのイメージ">
+  <defs>
+    <radialGradient id="spot" cx="34%" cy="20%" r="100%"><stop offset="0" stop-color="#2a447f"/><stop offset="52%" stop-color="#16234c"/><stop offset="100%" stop-color="#080f26"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset="1" stop-color="#bb8a30"/></linearGradient>
+    <linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ceee6"/><stop offset="1" stop-color="#4aa6d8"/></linearGradient>
+    <linearGradient id="sil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#33508d"/><stop offset="1" stop-color="#1b2a52"/></linearGradient>
+    <radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#eccd7c" stop-opacity=".5"/><stop offset="100%" stop-color="#eccd7c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="ac" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#56c7d6" stop-opacity=".45"/><stop offset="100%" stop-color="#56c7d6" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#7e93c8" stroke-opacity=".08"/></pattern>
+    <style>@keyframes p{0%,100%{opacity:.4}50%{opacity:1}}.pulse{animation:p 3s ease-in-out infinite}.pulse2{animation:p 3s ease-in-out infinite;animation-delay:-1.5s}@media(prefers-reduced-motion:reduce){.pulse,.pulse2{animation:none}}</style>
+  </defs>
+  <rect width="360" height="480" fill="url(#spot)"/>
+  <circle cx="300" cy="80" r="150" fill="url(#ag)"/><circle cx="60" cy="430" r="150" fill="url(#ac)"/>
+  <rect width="360" height="480" fill="url(#grid)"/>
+  <!-- quote mark -->
+  <text x="36" y="124" font-family="Georgia, serif" font-size="128" fill="url(#gold)" opacity=".85" filter="url(#glow)">&#8220;</text>
+  <!-- bust silhouette -->
+  <path d="M86 480 C 86 372 128 332 180 332 C 232 332 274 372 274 480 Z" fill="url(#sil)"/>
+  <circle cx="180" cy="252" r="58" fill="url(#sil)"/>
+  <path d="M86 480 C 86 372 128 332 180 332 C 232 332 274 372 274 480" fill="none" stroke="url(#gold)" stroke-width="2.5" opacity=".85" filter="url(#glow)"/>
+  <circle cx="180" cy="252" r="58" fill="none" stroke="url(#gold)" stroke-width="2.5" opacity=".85" filter="url(#glow)"/>
+  <!-- connection nodes -->
+  <g stroke="url(#cy)" stroke-width="1.6" fill="none" opacity=".7"><path d="M250 300 290 276M290 276 300 232"/></g>
+  <g fill="url(#cy)" filter="url(#glow)"><circle class="pulse" cx="250" cy="300" r="4"/><circle class="pulse2" cx="290" cy="276" r="4"/><circle class="pulse" cx="300" cy="232" r="4"/></g>
+</svg>

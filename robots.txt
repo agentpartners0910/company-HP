@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /redesign-proposal.html
+Disallow: /demo/
+Disallow: /server/
+
+Sitemap: https://agent-partners.example/sitemap.xml

@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1100 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="株式会社エージェントパートナーズ">
+  <defs>
+    <linearGradient id="navyH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3168"/>
+      <stop offset="100%" stop-color="#0F1A3C"/>
+    </linearGradient>
+    <linearGradient id="goldH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C547"/>
+      <stop offset="100%" stop-color="#9E7B17"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(180, 140)">
+    <circle cx="-50" cy="0" r="68" fill="none" stroke="url(#navyH)" stroke-width="10"/>
+    <circle cx="50" cy="0" r="68" fill="none" stroke="url(#navyH)" stroke-width="10"/>
+    <g fill="url(#goldH)">
+      <circle cx="-118" cy="0" r="7"/>
+      <circle cx="118" cy="0" r="7"/>
+      <circle cx="0" cy="-68" r="7"/>
+      <circle cx="0" cy="68" r="7"/>
+    </g>
+    <circle cx="0" cy="0" r="9" fill="url(#goldH)"/>
+  </g>
+  <line x1="370" y1="80" x2="370" y2="200" stroke="#C99B1F" stroke-width="0.8"/>
+  <text x="410" y="135" text-anchor="start" font-family="'Helvetica Neue','Arial',sans-serif" font-size="42" font-weight="300" fill="#0F1A3C" letter-spacing="8">AGENT PARTNERS</text>
+  <line x1="410" y1="155" x2="510" y2="155" stroke="#C99B1F" stroke-width="0.8"/>
+  <text x="410" y="190" text-anchor="start" font-family="'Yu Mincho','游明朝',serif" font-size="16" fill="#5A5A5A" letter-spacing="6">株式会社エージェントパートナーズ</text>
+</svg>

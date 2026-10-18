@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="DXリテラシー研修のイメージ">
+  <defs>
+    <radialGradient id="spot" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#2a447f"/><stop offset="52%" stop-color="#16234c"/><stop offset="100%" stop-color="#091029"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset="1" stop-color="#bb8a30"/></linearGradient>
+    <linearGradient id="cy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ceee6"/><stop offset="1" stop-color="#4aa6d8"/></linearGradient>
+    <radialGradient id="ag" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#eccd7c" stop-opacity=".5"/><stop offset="100%" stop-color="#eccd7c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="ac" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#56c7d6" stop-opacity=".5"/><stop offset="100%" stop-color="#56c7d6" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#7e93c8" stroke-opacity=".09"/></pattern>
+    <style>@keyframes f{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}.float{animation:f 6s ease-in-out infinite}.float2{animation:f 6s ease-in-out infinite;animation-delay:-3s}@media(prefers-reduced-motion:reduce){.float,.float2{animation:none}}</style>
+  </defs>
+  <rect width="480" height="360" fill="url(#spot)"/>
+  <circle cx="400" cy="60" r="150" fill="url(#ag)"/><circle cx="70" cy="330" r="150" fill="url(#ac)"/>
+  <rect width="480" height="360" fill="url(#grid)"/>
+  <!-- screen (glass) -->
+  <rect x="148" y="88" width="184" height="118" rx="14" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".2"/>
+  <path d="M178 178 l24 -36 22 22 26 -42 28 56" fill="none" stroke="url(#gold)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <g fill="url(#cy)"><circle cx="202" cy="142" r="3.5"/><circle cx="250" cy="122" r="3.5"/><circle cx="304" cy="156" r="3.5"/></g>
+  <rect x="206" y="222" width="68" height="7" rx="3.5" fill="#7d93c4"/>
+  <!-- three people -->
+  <g class="float"><g transform="translate(168,264)"><circle r="14" fill="url(#gold)" filter="url(#glow)"/><path d="M-16 22 q16 -14 32 0 l0 30 -32 0 z" fill="#dbe6ff"/></g></g>
+  <g class="float2"><g transform="translate(240,258)"><circle r="15" fill="url(#cy)" filter="url(#glow)"/><path d="M-17 24 q17 -15 34 0 l0 32 -34 0 z" fill="#9fb4e0"/></g></g>
+  <g class="float"><g transform="translate(312,264)"><circle r="14" fill="url(#gold)" filter="url(#glow)"/><path d="M-16 22 q16 -14 32 0 l0 30 -32 0 z" fill="#dbe6ff"/></g></g>
+</svg>
